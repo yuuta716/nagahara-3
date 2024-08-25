@@ -1,0 +1,1065 @@
+@charset "utf-8";
+
+* {
+  margin: 0;
+  padding: 0;
+  /* overflow-x: hidden; */
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* ヘッダー */
+
+.sp-menu {
+  margin-left: 0;
+  position: relative;
+  display: flex;
+  font-size: 60px;
+  z-index: 4;
+}
+
+.material-icons#open {
+  font-size: 40px;
+  color: #fff;
+  transform: translateY(20px);
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.sp-menu #open.hide {
+  display: none;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.95);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .6s;
+}
+
+.overlay.show {
+  opacity: 1;
+  background-image: url(img/sakura-1.jpg);
+  background-size: cover;
+  pointer-events: auto;
+  text-align: center;
+  display: block;
+  z-index: 5;
+}
+
+.overlay #close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 32px;
+  color: red;
+  cursor: pointer;
+}
+
+.overlay a {
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  color: gold;
+  background-color: rgba(0, 0, 0, 0.758);
+  width: 130px;
+  height: 40px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  border: 1px solid red;
+}
+
+.overlay ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.overlay li {
+  margin-top: 20px;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity .3s, transform .3s;
+}
+
+.overlay.show li {
+  opacity: 1;
+  transform: none;
+  margin-top: 15px;
+  font-size: 20px;
+  font-family: "Pinyon Script", cursive;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.overlay.show li:nth-child(1) {
+  transition-delay: .1s;
+}
+
+.overlay.show li:nth-child(2) {
+  transition-delay: .2s;
+}
+
+.overlay.show li:nth-child(3) {
+  transition-delay: .3s;
+}
+
+.overlay.show li:nth-child(4) {
+  transition-delay: .4s;
+}
+
+.Name a{
+  position: fixed;
+  text-decoration: none;
+  font-size: 30px;
+  color: aliceblue;
+  text-shadow: 5px 5px 10px pink;
+  margin-top: 50px;
+  margin-left: 5%;
+}
+
+/* header {
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  position: fixed;
+}
+
+header nav {
+  display: flex;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  line-height: 64px;
+  opacity: 0.8;
+  z-index: 4;
+}
+
+header ul {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  display: flex;
+  margin: 30px auto;
+}
+
+header a {
+  width: 140px;
+  border: 1px solid gold;
+  display: block;
+  margin: 0 5px 0;
+  text-align: center;
+  color: plum;
+  background-color: rgba(0, 0, 0, 0.781);
+  font-size: 16px;
+  text-decoration: none;
+  justify-content: space-between;
+}
+
+header a:hover {
+  background: seashell;
+  border-radius: 40%;
+} */
+
+/* .sp-menu {
+  display: none;
+}
+
+.overlay {
+  display: none;
+} */
+
+.main {
+  display: block;
+  width: 100%;
+  /* position: relative; */
+}
+
+/* 写真 */
+
+.photo-sp {
+  display: none;
+}
+
+.photo-pc {
+  width: 100%;
+  height: 100%;
+}
+
+video {
+  width: 100%;
+  height: 100vh;
+  -o-object-fit: cover;
+  object-fit: cover;
+  opacity: 0.8;
+  display: block;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.animated-text {
+  font-size: 2rem;
+  background-image: -webkit-linear-gradient(left, transparent 50%, #ffffbc 50%);
+  background-image: -moz-linear-gradient(left, transparent 50%, #ffffbc 50%);
+  background-image: -ms-linear-gradient(left, transparent 50%, #ffffbc 50%);
+  background-image: -o-linear-gradient(left, transparent 50%, #ffffbc 50%);
+  background-image: linear-gradient(left, transparent 50%, #ffffbc 50%);
+  background-size: 200% 100%;
+  background-position: 0 0.4em;  /* 左から開始 */
+  transition: background-position 5s;
+  padding: 0.5rem 1rem;
+}
+
+.active {
+  background-position: -100% 0.4em;  /* 右に移動 */
+}
+
+.photo-pc img {
+  display: block;
+  object-fit: scale-down;
+  width: 550px;
+  height: 100vh;
+  margin: 0 auto;
+  position: relative;
+  top: 0;
+  left: 30%;
+  -webkit-image: radial-gradient(rgba(255, 255, 255, 0)100%);
+  mask-image: radial-gradient(rgba(255, 255, 255, 0)100%);
+  filter: drop-shadow(0 0 10px black);
+  z-index: 1;
+}
+
+/* プロフィール */
+
+.profile {
+  display: block;
+  width: 100%;
+  height: 100vh;
+  /* padding-bottom: 30px; */
+  margin: 0 auto;
+  /* background-image: url('img/1009011.jpg'); */
+  background-size: cover;
+  z-index: 1;
+  font-family: "Shippori Mincho", serif;
+  font-style: normal;
+  background-color: #330066;
+  overflow: hidden;
+}
+
+.myProfile {
+  opacity: 0;
+  animation-name: fadeInAnime;
+  transition: opacity 2s, transform 2s;
+  animation-duration: 2s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes profile {
+  0% {
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0;
+  }
+
+  40% {
+    opacity: 0;
+  }
+
+  60% {
+    opacity: .6;
+  }
+
+  80% {
+    opacity: .8;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.myProfile.sl {
+  transform: translateX(-600px);
+  opacity: 0;
+}
+
+.myProfile.appear {
+  opacity: 1;
+  transform: none;
+}
+
+/* #profile {
+  background-color: #330066;
+} */
+
+.p-title {
+  background-image: url(img/kame.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.profile h1 {
+  font-size: 80px;
+  padding-top: 110px;
+  height: 30vh;
+  color: #fff;
+  text-align: center;
+  font-family: "Pinyon Script", cursive;
+  font-weight: 600;
+  font-style: normal;
+  text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+}
+
+.fadeIn {
+  animation-name: fadeInAnime;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  opacity: 0;
+}
+
+@keyframes fadeInAnime {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.profile img {
+  width: 250px;
+  height: 250px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  margin-left: 20%;
+  object-fit: cover;
+  border-radius: 30%;
+}
+
+.profile ul {
+  height: 300px;
+  list-style: none;
+  margin-top: -260px;
+  margin-left: 60%;
+}
+
+.profile li {
+  padding: 10px;
+  text-align: left;
+  font-weight: bold;
+  color: white;
+}
+
+/* 経歴、動機 */
+
+.introduction {
+  display: flex;
+  padding: 10px;
+  /* margin: 5px; */
+  /* background-color: antiquewhite; */
+  /* border: 4px solid blue; */
+  /* border-radius: 20px; */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#introduction {
+  background-color: #000022;
+}
+
+.Career {
+  width: 70%;
+  color: #fff;
+  margin: 0 auto;
+}
+
+.Career h2 {
+  width: 150px;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 30px;
+  font-family: "Pinyon Script", cursive;
+  font-weight: 800;
+  font-style: normal;
+  text-wrap: nowrap;
+  /* border-bottom: 4px solid red; */
+}
+
+.Career li {
+  padding-right: 5px;
+  padding-left: 5px;
+  margin-top: 10px;
+  list-style: none;
+}
+
+.myCareer{
+  opacity: 0;
+  animation-name: fadeInAnime;
+  transition: opacity 2s, transform 2s;
+  animation-duration: 2s;
+  animation-delay: .5s;
+  animation-fill-mode: forwards;
+  overflow: hidden;
+}
+
+@keyframes career {
+  0% {
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0;
+  }
+
+  40% {
+    opacity: 0;
+  }
+
+  60% {
+    opacity: .6;
+  }
+
+  80% {
+    opacity: .8;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.myCareer.sl {
+  transform: translateX(-400px);
+  opacity: 0;
+  overflow: hidden;
+}
+
+.myCareer.appear {
+  opacity: 1;
+  transform: none;
+}
+
+.comment {
+  width: 100%;
+  line-height: 64px;
+  color: #fff;
+  /* overflow: hidden; */
+}
+
+/* .comment h2 {
+  width: 380px;
+  text-align: center;
+  font-size: 20px;
+  margin: 5px auto;
+  border-bottom: 4px solid red;
+  white-space: nowrap;
+} */
+
+.comment h2 {
+  width: 80%;
+  text-align: center;
+  font-size: 20px;
+  margin: 5px auto;
+  /* border-bottom: 4px solid red; */
+  text-wrap: nowrap;
+  /* overflow: hidden; */
+}
+
+
+.comment p {
+  padding-top: 50px;
+  padding-right: 10px;
+  padding-left: 10px;
+  /* overflow: hidden; */
+}
+
+.myComment {
+  opacity: 0;
+  animation-name: fadeInAnime;
+  transition: opacity 2s, transform 2s;
+  animation-duration: 2s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+  overflow: hidden;
+}
+
+@keyframes comment {
+  0% {
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0;
+  }
+
+  40% {
+    opacity: 0;
+  }
+
+  60% {
+    opacity: .6;
+  }
+
+  80% {
+    opacity: .8;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.myComment.sr{
+  transform: translateX(400px);
+  opacity: 0;
+}
+
+.myComment.appear {
+  opacity: 1;
+  transform: none;
+}
+
+
+
+/* スキル */
+
+.skill-sp {
+  display: none;
+}
+
+.skill {
+  position: relative;
+}
+
+.myskill {
+  background-image: url('img/myskill.jpg');
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0%;
+  display: flex;
+  /* transform: translateY(22%); */
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.inner {
+  width: 80%;
+}
+
+.animate {
+  opacity: 0;
+  animation-name: fadeInAnime;
+  transition: opacity 2s, transform 2s;
+  animation-duration: 2s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes skill {
+  0% {
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0;
+  }
+
+  40% {
+    opacity: 0;
+  }
+
+  60% {
+    opacity: .6;
+  }
+
+  80% {
+    opacity: .8;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate.sr {
+  transform: translateX(400px);
+  opacity: 0;
+}
+
+.animate.sl {
+  transform: translateX(-400px);
+  opacity: 0;
+}
+
+.animate.appear {
+  opacity: 1;
+  transform: none;
+}
+
+.myskill h1 {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 60px;
+  color: #fff;
+  font-family: "Pinyon Script", cursive;
+  font-weight: 600;
+  font-style: normal;
+  text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+}
+
+.myskill h2 {
+  font-weight: normal;
+  text-align: center;
+  font-size: 20px;
+  margin-top: 16px;
+  color: #fff;
+  text-shadow: 5px 5px 10px aqua;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+}
+
+.bar-graph-wrap {
+  border-radius: 4px;
+  background-color: #aaa;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.graph {
+  height: 8px;
+  margin-left: 0;
+  background-color: red;
+  width: 90%;
+  margin-top: 20px;
+  border-radius: 0 4px 4px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  /* animation: graphAnim 3s forwards; */
+  overflow: hidden;
+}
+
+.graph-1 {
+  height: 8px;
+  margin-left: 0;
+  margin-top: 20px;
+  background-color: red;
+  width: 80%;
+  border-radius: 0 4px 4px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  /* animation: graphAnim 3s forwards; */
+  overflow: hidden;
+}
+
+.graph-2 {
+  height: 8px;
+  margin-left: 0;
+  margin-top: 20px;
+  background-color: red;
+  width: 60%;
+  border-radius: 0 4px 4px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  /* animation: graphAnim 3s forwards; */
+  overflow: hidden;
+}
+
+.graph-3 {
+  height: 8px;
+  margin-left: 0;
+  margin-top: 20px;
+  background-color: red;
+  width: 70%;
+  border-radius: 0 4px 4px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  /* animation: graphAnim 3s forwards; */
+  overflow: hidden;
+}
+
+.graph-4 {
+  height: 8px;
+  margin-left: 0;
+  margin-top: 20px;
+  background-color: red;
+  width: 70%;
+  border-radius: 0 4px 4px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  /* animation: graphAnim 3s forwards; */
+  overflow: hidden;
+}
+
+@media (max-width:1800px) {
+  .photo-pc img {
+    display: block;
+    object-fit: scale-down;
+    width: 550px;
+    height: 100vh;
+    margin: 0 auto;
+    position: absolute;
+    top: 0;
+    left: 28%;
+    -webkit-image: radial-gradient(rgba(255, 255, 255, 0)100%);
+    mask-image: radial-gradient(rgba(255, 255, 255, 0)100%);
+    filter: drop-shadow(0 0 10px black);
+    z-index: 1;
+  }
+}
+
+@media (max-width:800px) {
+  * {
+    max-width: 800px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .Name a{
+    display: block;
+    font-size: 30px;
+    color: red;
+    margin-top: 40px;
+  }
+
+  .sp-menu {
+    margin-left: 0;
+    position: relative;
+    display: flex;
+    font-size: 60px;
+    z-index: 4;
+  }
+
+  .material-icons#open {
+    font-size: 40px;
+    color: red;
+    transform: translateY(20px);
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+  }
+
+  .sp-menu #open.hide {
+    display: none;
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .6s;
+  }
+
+  .overlay.show {
+    opacity: 1;
+    background-image: url(img/sakura-1.jpg);
+    background-size: cover;
+    pointer-events: auto;
+    text-align: center;
+    display: block;
+    z-index: 5;
+  }
+
+  .overlay #close {
+    color: red;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-size: 32px;
+    cursor: pointer;
+  }
+
+  .overlay a {
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    color: gold;
+    background-color: rgba(0, 0, 0, 0.758);
+    width: 130px;
+    height: 40px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    border: 1px solid red;
+  }
+
+  .overlay ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .overlay li {
+    margin-top: 20px;
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity .3s, transform .3s;
+  }
+
+  .overlay.show li {
+    opacity: 1;
+    transform: none;
+    margin-top: 15px;
+  }
+
+  .overlay.show li:nth-child(1) {
+    transition-delay: .1s;
+  }
+
+  .overlay.show li:nth-child(2) {
+    transition-delay: .2s;
+  }
+
+  .overlay.show li:nth-child(3) {
+    transition-delay: .3s;
+  }
+
+  .overlay.show li:nth-child(4) {
+    transition-delay: .4s;
+  }
+
+  .photo-pc {
+    display: none;
+  }
+
+  .photo-sp {
+    display: block;
+    max-width: 100%;
+  }
+
+  .video {
+    display: none;
+  }
+
+  .photo-sp img {
+    display: block;
+    object-fit: scale-down;
+    width: 500px;
+    height: 100vh;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 0 auto;
+    -webkit-image: radial-gradient(rgba(255, 255, 255, 0)100%);
+    mask-image: radial-gradient(rgba(255, 255, 255, 0)100%);
+    filter: drop-shadow(0 0 10px black);
+    z-index: 1;
+  }
+
+  
+  /* .pic img{
+    display: block;
+    width: 100%;
+    opacity: 0.5;
+    -o-object-fit: cover;
+    object-fit: cover;
+    opacity: 0.8;
+  } */
+
+  .profile {
+    display: block;
+    width: 100%;
+    height: 700px;
+    margin: 0 auto;
+    position: relative;
+    background-image: url(img/programming-1.jpg);
+    background-size: cover;
+    opacity: .8;
+    z-index: 1;
+    font-family: "Shippori Mincho", serif;
+    font-style: normal;
+  }
+
+  .profile img {
+    position: absolute;
+    top: 55%;
+    left: -10%;
+    width: 150px;
+    height: 150px;
+  }
+
+  .p-title {
+    background-image: none;
+
+    background-color: aqua;
+  }
+
+  .profile h1 {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .profile ul {
+    display: block;
+    position: absolute;
+    top: 90%;
+    margin-left: 52%;
+    font-size: 12px;
+    color: #fff;
+    opacity: 1;
+  }
+
+  .profile li {
+    display: block;
+  }
+
+  .introduction {
+    flex-direction: column;
+  }
+
+  .Career, .comment {
+    width: 100%;
+  }
+
+  .Career li {
+    margin-top: 30px;
+    line-height: 25px;
+  }
+
+  /* .comment h2 {
+    width: 60%;
+    padding-top: 16px;
+    font-size: 20px;
+  } */
+
+  .comment h2 {
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 20px;
+  }
+
+
+  .comment p {
+    padding-top: 20px;
+  }
+
+  .Career li {
+    margin-top: 45px;
+    line-height: 25px;
+  }
+}
+
+@media (max-width:600px) {
+  .photo-sp img {
+    width: 100%;
+  }
+
+  .introduction {
+    flex-direction: column;
+  }
+
+  .Career, .comment {
+    width: 100%;
+  }
+
+  .Career h2 {
+    white-space: nowrap;
+  }
+
+  .Career li {
+    margin-top: 30px;
+    line-height: 25px;
+  }
+
+  /* .comment h2 {
+    width: 300px;
+    margin: 0 auto;
+    padding-top: 16px;
+    font-size: 14px;
+  } */
+
+  .comment h2 {
+    font-size: 16px;
+  }
+
+  .comment p {
+    padding-top: 20px;
+  }
+
+  .skill {
+    display: none;
+  }
+
+  .skill-sp {
+    display: block;
+    position: relative;
+  }
+
+  .myskill-sp {
+    display: flex;
+    background-image: url('img/myskill.jpg');
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0%;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .myskill-sp h1 {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 60px;
+    color: red;
+    font-family: "Pinyon Script", cursive;
+    font-weight: 600;
+    font-style: normal;
+    text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+  }
+  
+  .myskill-sp h2 {
+    font-weight: normal;
+    text-align: center;
+    font-size: 20px;
+    margin-top: 16px;
+    color: gold;
+    text-shadow: 5px 5px 10px aqua;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+  }
+}
