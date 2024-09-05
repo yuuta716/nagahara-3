@@ -47,8 +47,9 @@ body {
 
 .overlay.show {
   opacity: 1;
-  background-image: url(img/robert-hrovat-XTZ_OM0JmPU-unsplash.jpg);
-  background-size: cover;
+  /* background-image: url(img/robert-hrovat-XTZ_OM0JmPU-unsplash.jpg);
+  background-size: cover; */
+  background-color: #ddd;
   pointer-events: auto;
   text-align: center;
   display: block;
@@ -68,10 +69,10 @@ body {
   display: inline-block;
   text-decoration: none;
   text-align: center;
-  color: gold;
+  color: blue;
   /* background-color: rgba(0, 0, 0, 0.758); */
   width: 130px;
-  height: 40px;
+  height: 60px;
   padding-top: 20px;
   padding-bottom: 10px;
   /* border: 1px solid red; */
@@ -95,7 +96,7 @@ body {
   transform: none;
   margin-top: 15px;
   font-size: 20px;
-  font-family: "Pinyon Script", cursive;
+  font-family: "CormorantGaramond";
   font-weight: 800;
   font-style: normal;
 }
@@ -114,18 +115,6 @@ body {
 
 .overlay.show li:nth-child(4) {
   transition-delay: .4s;
-}
-
-.Name {
-  position: absolute;
-  top: 50px;
-  writing-mode: vertical-rl;
-  text-wrap: nowrap;
-  text-decoration: none;
-  font-size: 30px;
-  color: aliceblue;
-  margin-top: 50px;
-  margin-left: 5%;
 }
 
 /* header {
@@ -188,13 +177,20 @@ header a:hover {
 
 /* 写真 */
 
-.photo-sp {
-  display: none;
+.Name {
+  position: absolute;
+  top: 100px;
+  font-family: "Pinyon Script", cursive;
+  text-decoration: none;
+  font-size: 70px;
+  color: aliceblue;
+  margin-top: 50px;
+  margin-left: 3%;
+  z-index: 99;
 }
 
-.photo {
-  width: 100%;
-  height: 100%;
+.Name span {
+  color: blue;
 }
 
 video {
@@ -206,29 +202,6 @@ video {
   display: block;
 }
 
-.content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.animated-text {
-  font-size: 2rem;
-  background-image: -webkit-linear-gradient(left, transparent 50%, #ffffbc 50%);
-  background-image: -moz-linear-gradient(left, transparent 50%, #ffffbc 50%);
-  background-image: -ms-linear-gradient(left, transparent 50%, #ffffbc 50%);
-  background-image: -o-linear-gradient(left, transparent 50%, #ffffbc 50%);
-  background-image: linear-gradient(left, transparent 50%, #ffffbc 50%);
-  background-size: 200% 100%;
-  background-position: 0 0.4em;  /* 左から開始 */
-  transition: background-position 5s;
-  padding: 0.5rem 1rem;
-}
-
-.active {
-  background-position: -100% 0.4em;  /* 右に移動 */
-}
-
 .photo img {
   display: block;
   object-fit: scale-down;
@@ -238,24 +211,23 @@ video {
   position: absolute;
   top: 0;
   left: 30%;
-  -webkit-image: radial-gradient(rgba(255, 255, 255, 0)100%);
-  mask-image: radial-gradient(rgba(255, 255, 255, 0)100%);
-  filter: drop-shadow(0 0 10px black);
   z-index: 1;
   animation: kurukuru 1.4s ease-out;
   opacity: 1;
 }
 
 @keyframes kurukuru {
-  0%{
+  0% {
     transform: rotateY(0) translateY(40px);
     opacity: 0;
   }
-  50%{
+
+  50% {
     transform: rotateY(180deg) translateY(20px);
     opacity: .5;
   }
-  100%{
+
+  100% {
     transform: rotateY(360deg) translateY(0);
     opacity: 1;
   }
@@ -270,12 +242,10 @@ video {
   margin: 0 auto;
   padding-bottom: 40px;
   background-size: cover;
+  background-color: #ddd;
   z-index: 1;
   font-family: "Shippori Mincho", serif;
   font-style: normal;
-  /* background-color: #330066; */
-  background-image: url(img/yakei.jpg);
-  /* background-attachment: fixed; */
   background-size: cover;
   overflow: hidden;
 }
@@ -325,72 +295,85 @@ video {
   transform: none;
 }
 
-/* .p-title {
-  background-image: url(img/yakei.jpg);
-  background-attachment: fixed;
-  background-size: cover;
-} */
+.p-title {
+  display: flex;
+  align-items: center;
+}
 
 .profile h1 {
   font-size: 80px;
   padding-top: 110px;
+  margin-left: 50px;
   height: 30vh;
   color: #fff;
-  text-align: center;
+  text-align: left;
   font-family: "Pinyon Script", cursive;
   font-weight: 600;
   font-style: normal;
-  /* text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue; */
 }
 
-.fadeIn {
-  animation-name: fadeInAnime;
-  animation-duration: 5s;
-  animation-fill-mode: forwards;
-  animation-iteration-count: infinite;
-  opacity: 0;
+.p-title span {
+  font-size: 20px;
+  margin-left: 20px;
+  font-family: "NotoSansJP";
+  color: blue;
+  /* border-right: blue; */
 }
 
-@keyframes fadeInAnime {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
+.p-apper {
+  background: #3252fb;
+  flex: none;
+  height: 1px;
+  margin: 0px 0px -70px 60px;
+  width: calc(100% - 33%);
+  max-width: calc(100% - 20px);
 }
 
 .p {
   margin-top: 20px;
+  display: flex;
+}
+
+.YN {
+  font-family: 28px;
+  margin-bottom: 16px;
+  font-family: "NotoSansJP";
+  color: #444B4F;
+}
+
+.NY {
+  font-size: 30px;
+  color: blue;
+  font-family: "Pinyon Script", cursive;
 }
 
 .profile img {
-  width: 250px;
+  width: 400px;
   height: 250px;
-  margin-left: 20%;
-  border-radius: 10%;
+  margin-left: 5%;
+  margin-right: 100px;
+  border-radius: 8px;
   object-fit: cover;
 }
 
-.profile ul {
-  height: 300px;
-  list-style: none;
-  margin-top: -230px;
-  margin-left: 60%;
+.p-1 p {
+  margin-top: 20px;
+  line-height: 35px;
 }
 
-.profile li {
-  padding: 10px;
-  text-align: left;
-  font-weight: bold;
-  color: aliceblue;
+.p-2 {
+  text-align: right;
+  margin-right: 0;
+}
+
+.p-2 a {
+  text-decoration: none;
 }
 
 /* 経歴、動機 */
 
 .introduction {
-  display: flex;
+  display: block;
   padding: 10px;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -399,111 +382,53 @@ video {
 }
 
 #introduction {
-  background-color: #000022;
-}
-
-.Career {
-  width: 70%;
-  color: #fff;
-  margin: 0 auto;
-}
-
-.Career h2 {
-  width: 150px;
-  text-align: center;
-  margin: 0 auto;
-  font-size: 30px;
-  font-family: "Pinyon Script", cursive;
-  font-weight: 800;
-  font-style: normal;
-  text-wrap: nowrap;
-  /* border-bottom: 4px solid red; */
-}
-
-.Career li {
-  padding-right: 5px;
-  padding-left: 5px;
-  margin-top: 10px;
-  list-style: none;
-}
-
-.myCareer{
-  opacity: 0;
-  animation-name: fadeInAnime;
-  transition: opacity 2s, transform 2s;
-  animation-duration: 2s;
-  animation-delay: .5s;
-  animation-fill-mode: forwards;
-  overflow: hidden;
-}
-
-@keyframes career {
-  0% {
-    opacity: 0;
-  }
-
-  20% {
-    opacity: 0;
-  }
-
-  40% {
-    opacity: 0;
-  }
-
-  60% {
-    opacity: .6;
-  }
-
-  80% {
-    opacity: .8;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-.myCareer.sl {
-  transform: translateX(-400px);
-  opacity: 0;
-  overflow: hidden;
-}
-
-.myCareer.appear {
-  opacity: 1;
-  transform: none;
+  background-color: #ddd;
 }
 
 .comment {
   width: 100%;
-  line-height: 64px;
-  color: #fff;
-  /* overflow: hidden; */
+  line-height: 45px;
+  color: black;
+  overflow: hidden;
 }
 
-/* .comment h2 {
-  width: 380px;
-  text-align: center;
-  font-size: 20px;
-  margin: 5px auto;
-  border-bottom: 4px solid red;
-  white-space: nowrap;
-} */
+.Comment {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
 
 .comment h2 {
-  width: 80%;
-  text-align: center;
-  font-size: 20px;
-  margin: 5px auto;
-  /* border-bottom: 4px solid red; */
+  width: 100%;
+  text-align: left;
+  font-size: 70px;
+  color: #fff;
+  margin-left: 30px;
+  padding-top: 50px;
+  font-family: "Pinyon Script", cursive;
   text-wrap: nowrap;
-  /* overflow: hidden; */
+}
+
+.comment span {
+  margin-left: 20px;
+  font-size: 20px;
+  color: blue;
+  font-family: "NotoSansJP";
+}
+
+.c-apper {
+  background: #3252fb;
+  flex: none;
+  height: 1px;
+  margin: 0px -60px -70px 50px;
+  width: 100%;
+  max-width: 100%;
 }
 
 
 .comment p {
   padding-top: 50px;
-  padding-right: 10px;
+  /* padding-right: 10px; */
   padding-left: 10px;
   /* overflow: hidden; */
 }
@@ -544,7 +469,7 @@ video {
   }
 }
 
-.myComment.sr{
+.myComment.sr {
   transform: translateX(400px);
   opacity: 0;
 }
@@ -557,30 +482,98 @@ video {
 /* カルーセル */
 
 .work {
-  background-color: #000022cd;
+  background-color: #ddd;
   height: 100vh;
 }
+
+.Work {
+  display: flex;
+  align-items: center;
+}
+
+.mywork {
+  opacity: 0;
+  animation-name: fadeInAnime;
+  transition: opacity 2s, transform 2s;
+  animation-duration: 2s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes work {
+  0% {
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0;
+  }
+
+  40% {
+    opacity: 0;
+  }
+
+  60% {
+    opacity: .6;
+  }
+
+  80% {
+    opacity: .8;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.mywork.sl {
+  transform: translateX(-600px);
+  opacity: 0;
+}
+
+.mywork.appear {
+  opacity: 1;
+  transform: none;
+}
+
 
 .carousel {
   width: 80%;
   margin: 0 auto;
 }
 
-.carousel h1 {
+.work h1 {
   font-size: 80px;
   padding-top: 50px;
-  /* height: 30vh; */
+  margin-left: 50px;
+  height: 30vh;
   color: #fff;
-  text-align: center;
+  text-align: left;
   font-family: "Pinyon Script", cursive;
   font-weight: 600;
   font-style: normal;
 }
 
+.work span {
+  font-size: 20px;
+  margin-left: 20px;
+  color: blue;
+  font-family: "NotoSansJP";
+}
+
+.w-apper {
+  background: #3252fb;
+  flex: none;
+  height: 1px;
+  margin: 0px 0 -10px 28px;
+  width: calc(100% - 24%);
+  max-width: calc(100% - 24%);
+}
+
 
 .container {
   width: 100%;
-  height: 400px;
+  height: 300px;
   overflow: hidden;
   position: relative;
 }
@@ -592,7 +585,7 @@ video {
   height: 100%;
   display: flex;
   transition: transform .3s;
-  
+
 }
 
 .container li {
@@ -606,7 +599,8 @@ video {
   object-fit: cover;
 }
 
-#prev,#next {
+#prev,
+#next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -618,7 +612,8 @@ video {
   cursor: pointer;
 }
 
-#prev:hover,#next:hover {
+#prev:hover,
+#next:hover {
   opacity: .8;
 }
 
@@ -639,7 +634,7 @@ nav {
   text-align: center;
 }
 
-nav button + button {
+nav button+button {
   margin-left: 8px;
 }
 
@@ -656,45 +651,6 @@ nav .current {
   background: #999;
 }
 
-/* .carousel {
-  position: relative;
-  overflow: hidden;
-  width: 600px;
-  margin: auto;
-}
-
-.carousel-images {
-  display: flex;
-  transition: transform 0.5s ease;
-  object-fit: cover;
-}
-
-.carousel-images a {
-  width: 600px;
-  height: 400px;
-}
-
-.prev, .next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0,0,0,0.5);
-  border: none;
-  color: white;
-  cursor: pointer;
-  padding: 10px;
-  font-size: 18px;
-}
-
-.prev {
-  left: 10px;
-}
-
-.next {
-  right: 10px;
-} */
-
-
 /* スキル */
 
 .skill-sp {
@@ -706,15 +662,13 @@ nav .current {
 }
 
 .myskill {
-  background-image: url('img/myskill.jpg');
-  background-size: cover;
+  background-color: #ddd;
   width: 100%;
   height: 100vh;
   position: absolute;
   top: 0;
   left: 0%;
   display: flex;
-  /* transform: translateY(22%); */
   justify-content: center;
   align-items: center;
   overflow: hidden;
@@ -722,6 +676,10 @@ nav .current {
 
 .inner {
   width: 80%;
+  background-image: url('img/myskill.jpg');
+  background-size: cover;
+  padding-bottom: 20px;
+  border-radius: 10px;
 }
 
 .animate {
@@ -775,14 +733,21 @@ nav .current {
 }
 
 .myskill h1 {
-  margin-top: 30px;
-  text-align: center;
+  text-align: left;
   font-size: 60px;
+  padding: 10px;
   color: #fff;
   font-family: "Pinyon Script", cursive;
   font-weight: 600;
   font-style: normal;
-  text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+  z-index: 999;
+}
+
+.sk {
+  font-size: 20px;
+  margin-left: 20px;
+  color: blue;
+  font-family: "NotoSansJP";
 }
 
 .myskill h2 {
@@ -793,6 +758,14 @@ nav .current {
   color: #fff;
   text-shadow: 5px 5px 10px aqua;
   font-family: "M PLUS Rounded 1c", sans-serif;
+}
+
+.name,
+.namber {
+  font-style: normal;
+  font-family: "CormorantGaramond";
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.586);
 }
 
 .bar-graph-wrap {
@@ -901,10 +874,10 @@ nav .current {
     display: inline-block;
     text-decoration: none;
     text-align: center;
-    color: gold;
+    /* color: blue; */
     width: 250px;
-    height: 60px;
-    padding-top: 20px;
+    height: 100px;
+    padding-top: 40px;
     padding-bottom: 10px;
   }
 
@@ -926,47 +899,24 @@ nav .current {
   }
 
   .Name {
-    top: 350px;
-  }
-
-  .photo img {
-    display: block;
-    object-fit: scale-down;
-    width: 550px;
-    height: 60vh;
-    margin: 0 auto;
-    position: absolute;
-    top: 150px;
-    left: 28%;
-    -webkit-image: radial-gradient(rgba(255, 255, 255, 0)100%);
-    mask-image: radial-gradient(rgba(255, 255, 255, 0)100%);
-    filter: drop-shadow(0 0 10px black);
-    z-index: 1;
-  }
-
-  video {
-    height: 80vh;
+    top: 400px;
   }
 
   .profile {
-    display: block;
-    width: 100%;
-    height: 60vh;
-    margin: 0 auto;
-    /* padding-bottom: 40px; */
-    background-size: cover;
-    z-index: 1;
-    font-family: "Shippori Mincho", serif;
-    font-style: normal;
-    /* background-color: #330066; */
-    background-image: url(img/yakei-sp-1.jpg);
-    /* background-attachment: fixed; */
-    background-size: cover;
-    overflow: hidden;
+    height: 55vh;
   }
 
-  .myProfile.sl {
-    display: none;
+  .p-apper {
+    background: #3252fb;
+    flex: none;
+    height: 1px;
+    margin: 0px 0px 60px 60px;
+    width: calc(100% - 41%);
+    max-width: calc(100% - 20px);
+  }
+
+  .p-title h1 {
+    height: 300px;
   }
 
   .introduction {
@@ -979,6 +929,24 @@ nav .current {
 
   .work {
     height: 50vh;
+  }
+
+  .w-apper {
+    background: #3252fb;
+    flex: none;
+    height: 1px;
+    margin: 0px 0 20px 28px;
+    width: calc(100% - 30%);
+    max-width: calc(100% - 24%);
+  }
+  
+
+  .work h1 {
+    height: 200px;
+  }
+
+  .container img {
+    margin: 0;
   }
 
   .myskill {
@@ -994,11 +962,9 @@ nav .current {
 
   .Name {
     position: absolute;
-    top: 250px;
-    writing-mode: vertical-rl;
-    text-wrap: nowrap;
+    top: 280px;
     text-decoration: none;
-    font-size: 30px;
+    font-size: 60px;
     color: aliceblue;
   }
 
@@ -1011,7 +977,7 @@ nav .current {
     background-image: url(img/yakei-sp-2.jpg);
     object-fit: cover;
     position: absolute;
-    top: 150px;
+    top: 300px;
     left: 20%;
     width: 500px;
     height: 50vh;
@@ -1025,54 +991,47 @@ nav .current {
   }
 
   .profile {
-    display: block;
-    width: 100%;
-    height: 80vh;
-    margin: 0 auto;
-    position: relative;
-    background-image: url(img/yakei-sp-1.jpg);
-    background-size: cover;
-    z-index: 1;
-    font-family: "Shippori Mincho", serif;
-    font-style: normal;
+    height: 60vh;
   }
 
-  .myProfile.sl {
-    display: none;
-  }
-
-  .profile img {
-    position: absolute;
-    top: 68%;
-    left: -10%;
-    width: 200px;
-    height: 200px;
+  .p-apper {
+    background: #3252fb;
+    flex: none;
+    height: 1px;
+    margin: 0px 0px -130px 60px;
+    width: calc(100% - 52%);
+    max-width: calc(100% - 20px);
   }
 
   .profile h1 {
-    margin: 0 auto;
+    height: 100px;
+  }
+
+  .p {
+    display: block;
     text-align: center;
   }
 
-  .profile ul {
-    display: block;
-    position: absolute;
-    top: 90%;
-    margin-left: 52%;
-    font-size: 16px;
-    opacity: 1;
+  .p-1 {
+    text-align: left;
+    margin-top: 20px;
+    margin-left: 160px;
   }
 
-  .profile li {
-    display: block;
-    color: aliceblue;
+  .profile img {
+    margin-right: 40px;
+  }
+
+  .fadeIn {
+    margin-bottom: 0;
   }
 
   .introduction {
     flex-direction: column;
   }
 
-  .Career, .comment {
+  .Career,
+  .comment {
     width: 100%;
   }
 
@@ -1083,30 +1042,51 @@ nav .current {
 
   .comment h2 {
     width: 80%;
-    text-align: center;
-    margin: 0 auto;
-    font-size: 20px;
+    text-align: left;
+    font-size: 70px;
+    color: #fff;
+    margin-left: 30px;
+    padding-top: 50px;
+    font-family: "Pinyon Script", cursive;
+    text-wrap: nowrap;
   }
 
-
-  .comment p {
-    padding-top: 20px;
+  .comment span {
+    margin-left: 20px;
+    font-size: 25px;
+    font-family: "NotoSansJP";
   }
 
-  .Career li {
-    margin-top: 45px;
-    line-height: 25px;
+  .w-apper {
+    background: #3252fb;
+    flex: none;
+    height: 1px;
+    margin: 0px 0 20px 28px;
+    width: calc(100% - 38%);
+    max-width: calc(100% - 24%);
   }
+  
 }
 
 @media (max-width:800px) {
-  *{
+  * {
     margin: 0;
     padding: 0;
   }
 
   body {
     overflow-x: hidden;
+  }
+
+  .overlay a {
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    /* color: blue; */
+    width: 250px;
+    height: 80px;
+    padding-top: 40px;
+    padding-bottom: 10px;
   }
 
   .main {
@@ -1116,34 +1096,45 @@ nav .current {
   .profile {
     display: block;
     width: 100%;
-    height: 80vh;
+    height: 70vh;
     margin: 0 auto;
     position: relative;
-    background-image: url(img/yakei-sp-1.jpg);
-    background-size: cover;
     z-index: 1;
     font-family: "Shippori Mincho", serif;
     font-style: normal;
   }
 
-  .profile ul {
-    display: block;
-    position: absolute;
-    top: 95%;
-    margin-left: 52%;
-    font-size: 16px;
-    opacity: 1;
+  .profile h1 {
+    height: 100px;
   }
 
-  .myProfile.sl {
-    display: none;
+  .p-apper {
+    background: #3252fb;
+    flex: none;
+    height: 1px;
+    margin: 0px 0px -130px 60px;
+    width: calc(100% - 54%);
+    max-width: calc(100% - 20px);
   }
+
+  .p {
+    display: block;
+    text-align: center;
+  }
+
+  .p-1 {
+    text-align: left;
+    margin-top: 20px;
+    margin-left: 160px;
+  }
+
 
   .introduction {
     flex-direction: column;
   }
 
-  .Career, .comment {
+  .Career,
+  .comment {
     width: 100%;
   }
 
@@ -1161,616 +1152,933 @@ nav .current {
   }
 
   .comment h2 {
-    font-size: 16px;
-  }
-
-  .comment p {
-    padding-top: 20px;
-  }
-}
-
-@media(max-width:600px) {
-  .main {
-    overflow-x: hidden;
-    position: relative;
-  }
-
-  .Name {
-    position: absolute;
-    top: 150px;
-    writing-mode: vertical-rl;
-    text-wrap: nowrap;
-    text-decoration: none;
-    font-size: 30px;
-    color: aliceblue;
-  }
-
-  .photo img {
-    width: 300px;
-  }
-
-  .profile img {
-    position: absolute;
-    top: 68%;
-    left: -10%;
-    width: 180px;
-    height: 180px;
-  }
-
-  .profile ul {
-    top: 98%;
-  }
-
-  .myCareer{
-    opacity: 0;
-    animation-name: fadeInAnime;
-    transition: opacity 2s, transform 2s;
-    animation-duration: 2s;
-    animation-delay: .5s;
-    animation-fill-mode: forwards;
-    overflow: hidden;
-  }
-  
-  @keyframes career {
-    0% {
-      opacity: 0;
-    }
-  
-    20% {
-      opacity: 0;
-    }
-  
-    40% {
-      opacity: 0;
-    }
-  
-    60% {
-      opacity: .6;
-    }
-  
-    80% {
-      opacity: .8;
-    }
-  
-    100% {
-      opacity: 1;
-    }
-  }
-  
-  .myCareer.sl {
-    transform: translateX(-400px);
-    opacity: 0;
-    overflow: hidden;
-  }
-  
-  .myCareer.appear {
-    opacity: 1;
-    transform: none;
-  }
-
-  .myComment {
-    opacity: 0;
-    animation-name: fadeInAnime;
-    transition: opacity 2s, transform 2s;
-    animation-duration: 2s;
-    animation-delay: 1s;
-    animation-fill-mode: forwards;
-    overflow: hidden;
-  }
-  
-  @keyframes comment {
-    0% {
-      opacity: 0;
-    }
-  
-    20% {
-      opacity: 0;
-    }
-  
-    40% {
-      opacity: 0;
-    }
-  
-    60% {
-      opacity: .6;
-    }
-  
-    80% {
-      opacity: .8;
-    }
-  
-    100% {
-      opacity: 1;
-    }
-  }
-  
-  .myComment.sr{
-    transform: translateX(400px);
-    opacity: 0;
-  }
-  
-  .myComment.appear {
-    opacity: 1;
-    transform: none;
-  }
-
-  .work {
-    height: 50vh;
-  }
-
-  .container {
-    height: 200px;
-  }
-
-  .skill {
-    position: relative;
-  }
-  
-  .myskill {
-    background-image: url('img/myskill.jpg');
-    background-size: cover;
-    width: 100%;
-    height: 80vh;
-    position: absolute;
-    top: 0;
-    left: 0%;
-    display: flex;
-    /* transform: translateY(22%); */
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-  }
-  
-  .inner {
     width: 80%;
-  }
-  
-  .animate {
-    opacity: 0;
-    animation-name: fadeInAnime;
-    transition: opacity 2s, transform 2s;
-    animation-duration: 2s;
-    animation-delay: 1s;
-    animation-fill-mode: forwards;
-  }
-  
-  @keyframes skill {
-    0% {
-      opacity: 0;
-    }
-  
-    20% {
-      opacity: 0;
-    }
-  
-    40% {
-      opacity: 0;
-    }
-  
-    60% {
-      opacity: .6;
-    }
-  
-    80% {
-      opacity: .8;
-    }
-  
-    100% {
-      opacity: 1;
-    }
-  }
-  
-  .animate.sr {
-    transform: translateX(200px);
-    opacity: 0;
-  }
-  
-  .animate.sl {
-    transform: translateX(-200px);
-    opacity: 0;
-  }
-  
-  .animate.appear {
-    opacity: 1;
-    transform: none;
-  }
- 
-}
-
-@media(max-width:500px) {
-
-  /* body {
-    overflow-x: hidden;
-  } */
-
-  .main {
-    overflow-x: hidden;
-    position: relative;
-  }
-
-  .Name {
-    position: absolute;
-    top: 250px;
-    writing-mode: vertical-rl;
+    text-align: left;
+    font-size: 70px;
+    color: #fff;
+    margin-left: 30px;
+    padding-top: 50px;
+    font-family: "Pinyon Script", cursive;
     text-wrap: nowrap;
-    text-decoration: none;
-    font-size: 30px;
-    color: aliceblue;
   }
 
-  .photo img {
-    width: 300px;
-  }
-
-  .myProfile-sp img {
-    width: 150px;
-    height: 150px;
-  }
-
-  .profile ul {
-    top: 90%;
-  }
-
-  .myCareer{
-    opacity: 0;
-    animation-name: fadeInAnime;
-    transition: opacity 2s, transform 2s;
-    animation-duration: 2s;
-    animation-delay: .5s;
-    animation-fill-mode: forwards;
-    overflow: hidden;
-  }
-  
-  @keyframes career {
-    0% {
-      opacity: 0;
-    }
-  
-    20% {
-      opacity: 0;
-    }
-  
-    40% {
-      opacity: 0;
-    }
-  
-    60% {
-      opacity: .6;
-    }
-  
-    80% {
-      opacity: .8;
-    }
-  
-    100% {
-      opacity: 1;
-    }
-  }
-  
-  .myCareer.sl {
-    transform: translateX(-200px);
-    opacity: 0;
-    overflow: hidden;
-  }
-  
-  .myCareer.appear {
-    opacity: 1;
-    transform: none;
-  }
-
-  .myComment {
-    opacity: 0;
-    animation-name: fadeInAnime;
-    transition: opacity 2s, transform 2s;
-    animation-duration: 2s;
-    animation-delay: 1s;
-    animation-fill-mode: forwards;
-    overflow: hidden;
-  }
-  
-  @keyframes comment {
-    0% {
-      opacity: 0;
-    }
-  
-    20% {
-      opacity: 0;
-    }
-  
-    40% {
-      opacity: 0;
-    }
-  
-    60% {
-      opacity: .6;
-    }
-  
-    80% {
-      opacity: .8;
-    }
-  
-    100% {
-      opacity: 1;
-    }
-  }
-  
-  .myComment.sr{
-    transform: translateX(250px);
-    opacity: 0;
-  }
-  
-  .myComment.appear {
-    opacity: 1;
-    transform: none;
-  }
-
-  .work {
-    height: 48vh;
-  }
-
-  .carousel h1 {
-    font-size: 60px;
-  }
-
-  .container {
-    height: 300px;
-  }
-
-  .skill {
-    position: relative;
-  }
-  
-  .myskill {
-    background-image: url('img/myskill.jpg');
-    background-size: cover;
-    width: 100%;
-    height: 60vh;
-    position: absolute;
-    top: 0;
-    left: 0%;
-    display: flex;
-    /* transform: translateY(22%); */
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-  }
-  
-  .inner {
-    width: 80%;
-  }
-  
-  .animate {
-    opacity: 0;
-    animation-name: fadeInAnime;
-    transition: opacity 2s, transform 2s;
-    animation-duration: 2s;
-    animation-delay: 1s;
-    animation-fill-mode: forwards;
-  }
-  
-  @keyframes skill {
-    0% {
-      opacity: 0;
-    }
-  
-    20% {
-      opacity: 0;
-    }
-  
-    40% {
-      opacity: 0;
-    }
-  
-    60% {
-      opacity: .6;
-    }
-  
-    80% {
-      opacity: .8;
-    }
-  
-    100% {
-      opacity: 1;
-    }
-  }
-  
-  .animate.sr {
-    transform: translateX(200px);
-    opacity: 0;
-  }
-  
-  .animate.sl {
-    transform: translateX(-200px);
-    opacity: 0;
-  }
-  
-  .animate.appear {
-    opacity: 1;
-    transform: none;
-  }
- 
-}
-
-@media(max-width:400px) {
-
-  .overlay a {
-    padding-top: 40px;
-    height: 50px;
-  }
-
-  .overlay.show li {
-    margin-top: 30px;
-  }
-  .Name {
-    top: 200px;
-    margin-bottom: 0;
-  }
-
-  .work {
-    height: 40vh;
-  }
-
-  .container {
-    height: 200px;
-  }
-
-  .bar-graph-wrap {
-    width: 60%;
-  }
-}
-
-@media(max-width:380px) {
-
-  .overlay a {
-    display: inline-block;
-    text-decoration: none;
-    text-align: center;
-    color: gold;
-    width: 130px;
-    height: 40px;
-    padding-top: 30px;
-  }
-
-  .overlay.show li {
-    opacity: 1;
-    transform: none;
-    margin-top: 20px;
+  .comment span {
+    margin-left: 20px;
     font-size: 25px;
-    font-family: "Pinyon Script", cursive;
-    font-weight: 1000;
-    font-style: normal;
+    font-family: "NotoSansJP";
   }
 
-  .Name {
-    top: 135px;
-  }
-
-  .photo img {
-    width: 250px;
-  }
-
-  .profile ul {
-    display: block;
-    position: absolute;
-    top: 103%;
-    margin-left: 52%;
-    font-size: 13px;
-    opacity: 1;
-  }
-
-  .myComment {
-    opacity: 0;
-    animation-name: fadeInAnime;
-    transition: opacity 2s, transform 2s;
-    animation-duration: 2s;
-    animation-delay: 1s;
-    animation-fill-mode: forwards;
-    overflow: hidden;
-  }
-  
-  @keyframes comment {
-    0% {
-      opacity: 0;
-    }
-  
-    20% {
-      opacity: 0;
-    }
-  
-    40% {
-      opacity: 0;
-    }
-  
-    60% {
-      opacity: .6;
-    }
-  
-    80% {
-      opacity: .8;
-    }
-  
-    100% {
-      opacity: 1;
-    }
-  }
-  
-  .myComment.sr{
-    transform: translateX(200px);
-    opacity: 0;
-  }
-  
-  .myComment.appear {
-    opacity: 1;
-    transform: none;
-  }
-
-  .work {
-    height: 48vh;
-  }
-
-  .container {
-    height: 200px;
-  }
-
-  .myskill {
-    height: 70vh;
-  }
-}
-
-@media(max-width:350px) {
-
-  .overlay a {
-    display: inline-block;
-    text-decoration: none;
-    text-align: center;
-    color: gold;
-    width: 130px;
-    height: 40px;
-    padding-top: 60px;
-  }
-
-  .overlay.show li {
-    opacity: 1;
-    transform: none;
-    margin-top: 10px;
-    font-size: 30px;
-    font-family: "Pinyon Script", cursive;
-    font-weight: 1000;
-    font-style: normal;
-  }
-
-  .profile ul {
-    display: block;
-    position: absolute;
-    top: 95%;
-    margin-left: 52%;
-    font-size: 13px;
-    opacity: 1;
-  }
-
-  .myProfile-sp img {
-    width: 130px;
-    height: 130px;
-  }
-
-  .work {
-    height: 38vh;
-  }
-
-  .carousel h1 {
-    font-size: 50px;
-  }
-
-  .myskill {
-    height: 55vh;
-  }
-
-  .myskill h1 {
-    font-size: 50px;
-    margin-bottom: 40px;
+  .w-apper {
+    background: #3252fb;
+    flex: none;
+    height: 1px;
+    margin: 0px 0 20px 28px;
+    width: calc(100% - 39%);
+    max-width: calc(100% - 24%);
   }
 
   .bar-graph-wrap {
-    width: 60%;
+    width: 70%;
+  }
+
+  @media(max-width:600px) {
+    .main {
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    .overlay a {
+      display: inline-block;
+      text-decoration: none;
+      text-align: center;
+      width: 250px;
+      height: 60px;
+      padding-top: 20px;
+      padding-bottom: 10px;
+    }
+
+
+    .overlay.show li {
+      opacity: 1;
+      transform: none;
+      margin-top: 40px;
+      font-size: 30px;
+      font-weight: 800;
+      font-style: normal;
+    }
+
+    .Name {
+      position: absolute;
+      top: 100px;
+      text-decoration: none;
+      font-size: 60px;
+      color: aliceblue;
+    }
+
+    .photo img {
+      width: 300px;
+    }
+
+    .profile {
+      height: 100vh;
+    }
+
+    .p-apper {
+      display: none;
+    }
+
+    .myProfile {
+      opacity: 0;
+      animation-name: fadeInAnime;
+      transition: opacity 2s, transform 2s;
+      animation-duration: 2s;
+      animation-delay: 1s;
+      animation-fill-mode: forwards;
+    }
+
+    @keyframes profile {
+      0% {
+        opacity: 0;
+      }
+
+      20% {
+        opacity: 0;
+      }
+
+      40% {
+        opacity: 0;
+      }
+
+      60% {
+        opacity: .6;
+      }
+
+      80% {
+        opacity: .8;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .myProfile.sl {
+      transform: translateX(-400px);
+      opacity: 0;
+    }
+
+    .myProfile.appear {
+      opacity: 1;
+      transform: none;
+    }
+
+
+    .profile h1 {
+      padding-top: 50px;
+    }
+
+    .p-1 {
+      text-align: left;
+      margin-top: 20px;
+      margin-left: 40px;
+      padding-right: 16px;
+    }
+
+    .myComment {
+      opacity: 0;
+      animation-name: fadeInAnime;
+      transition: opacity 2s, transform 2s;
+      animation-duration: 2s;
+      animation-delay: 1s;
+      animation-fill-mode: forwards;
+      overflow: hidden;
+    }
+
+    @keyframes comment {
+      0% {
+        opacity: 0;
+      }
+
+      20% {
+        opacity: 0;
+      }
+
+      40% {
+        opacity: 0;
+      }
+
+      60% {
+        opacity: .6;
+      }
+
+      80% {
+        opacity: .8;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .myComment.sr {
+      transform: translateX(400px);
+      opacity: 0;
+    }
+
+    .myComment.appear {
+      opacity: 1;
+      transform: none;
+    }
+
+    .c-apper {
+      display: none;
+    }
+
+    .work {
+      height: 70vh;
+    }
+
+    .w-apper {
+      display: none;
+    }
+
+    .mywork {
+      opacity: 0;
+      animation-name: fadeInAnime;
+      transition: opacity 2s, transform 2s;
+      animation-duration: 2s;
+      animation-delay: 1s;
+      animation-fill-mode: forwards;
+    }
+
+    @keyframes work {
+      0% {
+        opacity: 0;
+      }
+
+      20% {
+        opacity: 0;
+      }
+
+      40% {
+        opacity: 0;
+      }
+
+      60% {
+        opacity: .6;
+      }
+
+      80% {
+        opacity: .8;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .mywork.sl {
+      transform: translateX(-400px);
+      opacity: 0;
+    }
+
+    .mywork.appear {
+      opacity: 1;
+      transform: none;
+    }
+
+    .work h1 {
+      height: 150px;
+    }
+
+    .container {
+      height: 300px;
+    }
+
+    .skill {
+      position: relative;
+    }
+
+    .myskill {
+      background-image: url('img/myskill.jpg');
+      background-size: cover;
+      width: 100%;
+      height: 80vh;
+      position: absolute;
+      top: 0;
+      left: 0%;
+      display: flex;
+      /* transform: translateY(22%); */
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .inner {
+      width: 80%;
+    }
+
+    .bar-graph-wrap {
+      width: 100%;
+    }
+
+    .animate {
+      opacity: 0;
+      animation-name: fadeInAnime;
+      transition: opacity 2s, transform 2s;
+      animation-duration: 2s;
+      animation-delay: 1s;
+      animation-fill-mode: forwards;
+    }
+
+    @keyframes skill {
+      0% {
+        opacity: 0;
+      }
+
+      20% {
+        opacity: 0;
+      }
+
+      40% {
+        opacity: 0;
+      }
+
+      60% {
+        opacity: .6;
+      }
+
+      80% {
+        opacity: .8;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .animate.sr {
+      transform: translateX(200px);
+      opacity: 0;
+    }
+
+    .animate.sl {
+      transform: translateX(-200px);
+      opacity: 0;
+    }
+
+    .animate.appear {
+      opacity: 1;
+      transform: none;
+    }
+
+  }
+
+  @media(max-width:500px) {
+
+    .main {
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    .overlay a {
+      display: inline-block;
+      text-decoration: none;
+      text-align: center;
+      width: 250px;
+      height: 80px;
+      padding-top: 20px;
+      padding-bottom: 10px;
+    }
+
+
+    .overlay.show li {
+      opacity: 1;
+      transform: none;
+      margin-top: 50px;
+      font-size: 30px;
+      font-weight: 800;
+      font-style: normal;
+    }
+
+    .Name {
+      position: absolute;
+      top: 200px;
+      text-decoration: none;
+      font-size: 50px;
+      color: aliceblue;
+    }
+
+    .photo img {
+      width: 300px;
+    }
+
+    .profile {
+      height: 90vh;
+    }
+
+    .myProfile {
+      opacity: 0;
+      animation-name: fadeInAnime;
+      transition: opacity 2s, transform 2s;
+      animation-duration: 2s;
+      animation-delay: 1s;
+      animation-fill-mode: forwards;
+    }
+
+    @keyframes profile {
+      0% {
+        opacity: 0;
+      }
+
+      20% {
+        opacity: 0;
+      }
+
+      40% {
+        opacity: 0;
+      }
+
+      60% {
+        opacity: .6;
+      }
+
+      80% {
+        opacity: .8;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .myProfile.sl {
+      transform: translateX(-200px);
+      opacity: 0;
+    }
+
+    .myProfile.appear {
+      opacity: 1;
+      transform: none;
+    }
+
+
+    .profile h1 {
+      font-size: 50px;
+      margin-left: 20px;
+    }
+
+    .profile span {
+      font-size: 20px;
+    }
+
+    .p {
+      display: block;
+    }
+
+    .profile img {
+      margin: 10px;
+    }
+
+    .p-1 {
+      margin-left: 20px;
+    }
+
+    .myCareer {
+      opacity: 0;
+      animation-name: fadeInAnime;
+      transition: opacity 2s, transform 2s;
+      animation-duration: 2s;
+      animation-delay: .5s;
+      animation-fill-mode: forwards;
+      overflow: hidden;
+    }
+
+    @keyframes career {
+      0% {
+        opacity: 0;
+      }
+
+      20% {
+        opacity: 0;
+      }
+
+      40% {
+        opacity: 0;
+      }
+
+      60% {
+        opacity: .6;
+      }
+
+      80% {
+        opacity: .8;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .myCareer.sl {
+      transform: translateX(-200px);
+      opacity: 0;
+      overflow: hidden;
+    }
+
+    .myCareer.appear {
+      opacity: 1;
+      transform: none;
+    }
+
+    .myComment {
+      opacity: 0;
+      animation-name: fadeInAnime;
+      transition: opacity 2s, transform 2s;
+      animation-duration: 2s;
+      animation-delay: 1s;
+      animation-fill-mode: forwards;
+      overflow: hidden;
+    }
+
+    @keyframes comment {
+      0% {
+        opacity: 0;
+      }
+
+      20% {
+        opacity: 0;
+      }
+
+      40% {
+        opacity: 0;
+      }
+
+      60% {
+        opacity: .6;
+      }
+
+      80% {
+        opacity: .8;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .myComment.sr {
+      transform: translateX(250px);
+      opacity: 0;
+    }
+
+    .myComment.appear {
+      opacity: 1;
+      transform: none;
+    }
+
+    .comment h2 {
+      font-size: 50px;
+      margin-left: 20px;
+    }
+
+    .comment span {
+      font-size: 20px;
+    }
+
+    .work {
+      height: 50vh;
+    }
+
+    .mywork {
+      opacity: 0;
+      animation-name: fadeInAnime;
+      transition: opacity 2s, transform 2s;
+      animation-duration: 2s;
+      animation-delay: 1s;
+      animation-fill-mode: forwards;
+    }
+
+    @keyframes work {
+      0% {
+        opacity: 0;
+      }
+
+      20% {
+        opacity: 0;
+      }
+
+      40% {
+        opacity: 0;
+      }
+
+      60% {
+        opacity: .6;
+      }
+
+      80% {
+        opacity: .8;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .mywork.sl {
+      transform: translateX(-200px);
+      opacity: 0;
+    }
+
+    .mywork.appear {
+      opacity: 1;
+      transform: none;
+    }
+
+    .work h1 {
+      margin-left: 20px;
+      font-size: 50px;
+      height: 100px;
+    }
+
+    .container {
+      height: 250px;
+    }
+
+    .skill {
+      position: relative;
+    }
+
+    .myskill {
+      background-image: url('img/myskill.jpg');
+      background-size: cover;
+      width: 100%;
+      height: 60vh;
+      position: absolute;
+      top: 0;
+      left: 0%;
+      display: flex;
+      /* transform: translateY(22%); */
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .myskill h1 {
+      font-size: 50px;
+      margin-left: 0;
+    }
+
+    .myskill span {
+      font-size: 20px;
+    }
+
+    .inner {
+      width: 80%;
+    }
+
+    .bar-graph-wrap {
+      width: 95%;
+    }
+
+    .animate {
+      opacity: 0;
+      animation-name: fadeInAnime;
+      transition: opacity 2s, transform 2s;
+      animation-duration: 2s;
+      animation-delay: 1s;
+      animation-fill-mode: forwards;
+    }
+
+    @keyframes skill {
+      0% {
+        opacity: 0;
+      }
+
+      20% {
+        opacity: 0;
+      }
+
+      40% {
+        opacity: 0;
+      }
+
+      60% {
+        opacity: .6;
+      }
+
+      80% {
+        opacity: .8;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .animate.sr {
+      transform: translateX(200px);
+      opacity: 0;
+    }
+
+    .animate.sl {
+      transform: translateX(-200px);
+      opacity: 0;
+    }
+
+    .animate.appear {
+      opacity: 1;
+      transform: none;
+    }
+
+  }
+
+  @media(max-width:400px) {
+
+    .overlay a {
+      padding-top: 40px;
+      height: 60px;
+    }
+
+    .overlay.show li {
+      margin-top: 30px;
+    }
+
+    .Name {
+      top: 200px;
+      margin-bottom: 0;
+    }
+
+    .profile {
+      height: 95vh;
+    }
+
+    .profile h1 {
+      font-size: 50px;
+    }
+
+    .profile span {
+      font-size: 20px;
+    }
+
+    .profile img {
+      width: 100%;
+      margin: 0;
+    }
+
+    .p-1 {
+      margin-left: 10px;
+      padding-right: 5px;
+    }
+
+    .comment h2 {
+      font-size: 50px;
+    }
+
+    .comment span {
+      font-size: 20px;
+    }
+
+    .work {
+      height: 45vh;
+    }
+
+    .work h1 {
+      font-size: 50px;
+      height: 100px;
+    }
+
+    .work span {
+      font-size: 20px;
+    }
+
+    .container {
+      height: 200px;
+    }
+
+    .myskill h1 {
+      font-size: 50px;
+    }
+
+    .myskill span {
+      font-size: 20px;
+    }
+
+    .bar-graph-wrap {
+      width: 105%;
+    }
+  }
+
+  @media(max-width:380px) {
+
+    .overlay a {
+      display: inline-block;
+      text-decoration: none;
+      text-align: center;
+      color: blue;
+      width: 130px;
+      height: 60px;
+      padding-top: 30px;
+    }
+
+    .overlay.show li {
+      opacity: 1;
+      transform: none;
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: 1000;
+      font-style: normal;
+    }
+
+    .Name {
+      top: 100px;
+      font-size: 40px;
+    }
+
+    .photo img {
+      width: 250px;
+      top: 190px;
+    }
+
+    .profile {
+      height: 125vh;
+    }
+
+    .profile h1 {
+      font-size: 50px;
+    }
+
+    .profile span {
+      font-size: 20px;
+    }
+
+    .myComment {
+      opacity: 0;
+      animation-name: fadeInAnime;
+      transition: opacity 2s, transform 2s;
+      animation-duration: 2s;
+      animation-delay: 1s;
+      animation-fill-mode: forwards;
+      overflow: hidden;
+    }
+
+    @keyframes comment {
+      0% {
+        opacity: 0;
+      }
+
+      20% {
+        opacity: 0;
+      }
+
+      40% {
+        opacity: 0;
+      }
+
+      60% {
+        opacity: .6;
+      }
+
+      80% {
+        opacity: .8;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .myComment.sr {
+      transform: translateX(200px);
+      opacity: 0;
+    }
+
+    .myComment.appear {
+      opacity: 1;
+      transform: none;
+    }
+
+    .comment h2 {
+      font-size: 50px;
+    }
+
+    .comment span {
+      font-size: 20px;
+    }
+
+    .work {
+      height: 50vh;
+    }
+
+    .work h1 {
+      font-size: 50px;
+      height: 100px;
+    }
+
+    .work span {
+      font-size: 20px;
+    }
+
+    .container {
+      height: 200px;
+    }
+
+    .myskill {
+      height: 70vh;
+    }
+
+    .myskill h1 {
+      font-size: 50px;
+    }
+
+    .myskill span {
+      font-size: 20px;
+    }
+  }
+
+  @media(max-width:350px) {
+
+    .overlay a {
+      display: inline-block;
+      text-decoration: none;
+      text-align: center;
+      width: 130px;
+      height: 60px;
+      padding-top: 60px;
+    }
+
+    .overlay.show li {
+      opacity: 1;
+      transform: none;
+      margin-top: 10px;
+      font-size: 25px;
+      font-weight: 1000;
+      font-style: normal;
+    }
+
+    .profile {
+      height: 95vh;
+    }
+
+    .work {
+      height: 38vh;
+    }
+
+    .carousel h1 {
+      font-size: 50px;
+    }
+
+    .myskill {
+      height: 55vh;
+    }
+
+    .myskill h1 {
+      font-size: 50px;
+      margin-bottom: 40px;
+    }
+
+    .bar-graph-wrap {
+      width: 80%;
+    }
   }
 }
