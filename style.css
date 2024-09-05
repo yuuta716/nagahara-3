@@ -1941,7 +1941,7 @@ nav .current {
     }
 
     .profile {
-      height: 125vh;
+      height: 130vh;
     }
 
     .profile h1 {
@@ -1950,6 +1950,10 @@ nav .current {
 
     .profile span {
       font-size: 20px;
+    }
+
+    .p-2 {
+      margin-top: 20px;
     }
 
     .myComment {
