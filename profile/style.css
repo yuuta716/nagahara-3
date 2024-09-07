@@ -575,7 +575,7 @@ body {
   }
 
   .career {
-    width: 540px;
+    width: 700px;
     padding-left: 10px;
     padding-right: 20px;
     margin-left: 130px;
@@ -647,6 +647,15 @@ body {
 
   .p-1 {
     width: 600px;
+  }
+
+  .Career {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .career {
+    margin-left: 0;
   }
 }
 

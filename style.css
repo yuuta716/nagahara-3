@@ -250,6 +250,10 @@ video {
   overflow: hidden;
 }
 
+.p-pc {
+  display: block;
+}
+
 .myProfile {
   opacity: 0;
   animation-name: fadeInAnime;
@@ -902,9 +906,16 @@ nav .current {
     top: 400px;
   }
 
-  .profile {
-    /* height: 55vh; */
+  /* video {
+    display: none;
   }
+
+  .sp-photo {
+    display: block;
+    position: relative;
+    top: 0;
+    background-color: #ddd;
+  } */
 
   .p-apper {
     background: #3252fb;
@@ -988,10 +999,6 @@ nav .current {
     mask-image: radial-gradient(rgba(255, 255, 255, 0)100%);
     filter: drop-shadow(0 0 10px black);
     z-index: 1;
-  }
-
-  .profile {
-    /* height: 60vh; */
   }
 
   .p-apper {
@@ -1513,9 +1520,17 @@ nav .current {
       width: 300px;
     }
 
+    .p-pc {
+      display: none;
+    }
+
     /* .profile {
       height: 90vh;
     } */
+
+    .p-1 p {
+      line-height: 38px;
+    }
 
     .myProfile {
       opacity: 0;
@@ -1686,8 +1701,12 @@ nav .current {
       font-size: 20px;
     }
 
+    .comment p {
+      line-height: 50px;
+    }
+
     .work {
-      height: 50vh;
+      height: 40vh;
     }
 
     .mywork {
@@ -1742,7 +1761,7 @@ nav .current {
     }
 
     .container {
-      height: 250px;
+      height: 200px;
     }
 
     .skill {
@@ -2024,7 +2043,7 @@ nav .current {
     }
 
     .container {
-      height: 200px;
+      height: 180px;
     }
 
     .myskill {
