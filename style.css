@@ -7,191 +7,77 @@
 
 body {
   overflow-x: hidden;
+  width: 100%;
 }
 
 /* ヘッダー */
 
-.sp-menu {
-  margin-left: 0;
-  position: relative;
-  display: flex;
-  font-size: 60px;
-  z-index: 4;
-}
-
-.material-icons#open {
-  font-size: 40px;
-  color: #fff;
-  transform: translateY(20px);
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  cursor: pointer;
-}
-
-.sp-menu #open.hide {
-  display: none;
-}
-
-.overlay {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(255, 255, 255, 0.95);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity .6s;
-}
-
-.overlay.show {
-  opacity: 1;
-  /* background-image: url(img/robert-hrovat-XTZ_OM0JmPU-unsplash.jpg);
-  background-size: cover; */
-  background-color: #ddd;
-  pointer-events: auto;
-  text-align: center;
-  display: block;
-  z-index: 5;
-}
-
-.overlay #close {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  font-size: 32px;
-  color: red;
-  cursor: pointer;
-}
-
-.overlay a {
-  display: inline-block;
-  text-decoration: none;
-  text-align: center;
-  color: blue;
-  /* background-color: rgba(0, 0, 0, 0.758); */
-  width: 130px;
-  height: 60px;
-  padding-top: 20px;
-  padding-bottom: 10px;
-  /* border: 1px solid red; */
-}
-
-.overlay ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.overlay li {
-  margin-top: 20px;
-  opacity: 0;
-  transform: translateY(16px);
-  transition: opacity .3s, transform .3s;
-}
-
-.overlay.show li {
-  opacity: 1;
-  transform: none;
-  margin-top: 15px;
-  font-size: 20px;
-  font-family: "CormorantGaramond";
-  font-weight: 800;
-  font-style: normal;
-}
-
-.overlay.show li:nth-child(1) {
-  transition-delay: .1s;
-}
-
-.overlay.show li:nth-child(2) {
-  transition-delay: .2s;
-}
-
-.overlay.show li:nth-child(3) {
-  transition-delay: .3s;
-}
-
-.overlay.show li:nth-child(4) {
-  transition-delay: .4s;
-}
-
-/* header {
+header {
   z-index: 2;
   width: 100%;
   display: flex;
   position: fixed;
 }
 
+.Name {
+  font-family: "Pinyon Script", cursive;
+  text-decoration: none;
+  font-size: 20px;
+  color: aliceblue;
+  margin-top: 20px;
+  margin-left: 3%;
+  z-index: 99;
+}
+
+
 header nav {
   display: flex;
   width: 100%;
   position: fixed;
-  top: 0;
-  left: 0;
-  line-height: 64px;
-  opacity: 0.8;
+  line-height: 100px;
   z-index: 4;
+  justify-content: flex-end;
 }
 
 header ul {
   display: flex;
-  justify-content: space-between;
   list-style: none;
   display: flex;
-  margin: 30px auto;
 }
 
 header a {
-  width: 140px;
-  border: 1px solid gold;
+  width: 80px;
   display: block;
   margin: 0 5px 0;
-  text-align: center;
-  color: plum;
-  background-color: rgba(0, 0, 0, 0.781);
-  font-size: 16px;
+  color: #fff;
+  font-size: 14px;
   text-decoration: none;
-  justify-content: space-between;
 }
 
 header a:hover {
-  background: seashell;
-  border-radius: 40%;
-} */
+  opacity: .5;
+}
 
-/* .sp-menu {
+.sp-menu {
   display: none;
 }
 
 .overlay {
   display: none;
-} */
+}
+
+.pagetop {
+  display: none;
+}
 
 .main {
   display: block;
+  max-width: 100%;
   width: 100%;
   /* position: relative; */
 }
 
 /* 写真 */
-
-.Name {
-  position: absolute;
-  top: 100px;
-  font-family: "Pinyon Script", cursive;
-  text-decoration: none;
-  font-size: 70px;
-  color: aliceblue;
-  margin-top: 50px;
-  margin-left: 3%;
-  z-index: 99;
-}
-
-.Name span {
-  color: blue;
-}
 
 video {
   width: 100%;
@@ -241,13 +127,13 @@ video {
   height: auto;
   margin: 0 auto;
   padding-bottom: 40px;
-  background-size: cover;
-  background-color: #ddd;
   z-index: 1;
   font-family: "Shippori Mincho", serif;
   font-style: normal;
-  background-size: cover;
   overflow: hidden;
+  transition: 1s;
+  transition-delay: .5s;
+  position: relative;
 }
 
 .p-pc {
@@ -290,7 +176,7 @@ video {
 }
 
 .myProfile.sl {
-  transform: translateX(-600px);
+  transform: translateY(100px);
   opacity: 0;
 }
 
@@ -299,38 +185,56 @@ video {
   transform: none;
 }
 
-.p-title {
-  display: flex;
-  align-items: center;
+/*アニメーション*/
+/* .text.offs .effect {
+  opacity: 0;
+} */
+
+.text.ons .effect {
+  opacity: 1;
+  transition-duration: 1s;
 }
 
-.profile h1 {
-  font-size: 80px;
-  padding-top: 110px;
-  margin-left: 50px;
-  height: 30vh;
-  color: #fff;
-  text-align: left;
+.text.offs {
+  font-size: 40px;
+  margin-top: 20px;
+  margin-left: 20px;
   font-family: "Pinyon Script", cursive;
-  font-weight: 600;
   font-style: normal;
 }
 
-.p-title span {
-  font-size: 20px;
-  margin-left: 20px;
-  font-family: "NotoSansJP";
-  color: blue;
-  /* border-right: blue; */
+/*遅延の設定*/
+.delay-1 {
+  transition-delay: 0.2s;
 }
 
-.p-apper {
-  background: #3252fb;
-  flex: none;
-  height: 1px;
-  margin: 0px 0px -70px 60px;
-  width: calc(100% - 33%);
-  max-width: calc(100% - 20px);
+.delay-2 {
+  transition-delay: 0.4s;
+}
+
+.delay-3 {
+  transition-delay: 0.6s;
+}
+
+.delay-4 {
+  transition-delay: 0.8s;
+}
+
+.delay-5 {
+  transition-delay: 1s;
+}
+
+.delay-6 {
+  transition-delay: 1.2s;
+} 
+
+del.c_del_2 {
+  background-image: linear-gradient(#AAA,#AAA);
+  background-position: 0 50%;
+  background-size: 100% 10px;
+  background-repeat: repeat-x;
+  text-decoration: none;
+  padding: 0 2px;
 }
 
 .p {
@@ -339,21 +243,21 @@ video {
 }
 
 .YN {
-  font-family: 28px;
+  font-size: 28px;
   margin-bottom: 16px;
-  font-family: "NotoSansJP";
-  color: #444B4F;
+  font-family: NotoSerifJP;
+  color: #AAA;
 }
 
 .NY {
   font-size: 30px;
-  color: blue;
+  color: #AAA;
   font-family: "Pinyon Script", cursive;
 }
 
 .profile img {
   width: 400px;
-  height: 250px;
+  height: 450px;
   margin-left: 5%;
   margin-right: 100px;
   border-radius: 8px;
@@ -363,36 +267,36 @@ video {
 .p-1 p {
   margin-top: 20px;
   line-height: 35px;
+  color: #AAA;
 }
 
 .p-2 {
   text-align: right;
+  margin-top: 16px;
   margin-right: 0;
 }
 
 .p-2 a {
   text-decoration: none;
+  color: #AAA;
 }
 
 /* 経歴、動機 */
 
 .introduction {
   display: block;
-  padding: 10px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-#introduction {
-  background-color: #ddd;
+  height: auto;
+  padding-bottom: 100px;
+  padding-left: 10px;
+  padding-right: 10px;
+  transition: 1s;
+  transition-delay: .5s;
 }
 
 .comment {
   width: 100%;
-  line-height: 45px;
-  color: black;
+  line-height: 50px;
+  color: #111111;
   overflow: hidden;
 }
 
@@ -402,39 +306,62 @@ video {
   align-items: center;
 }
 
-.comment h2 {
-  width: 100%;
-  text-align: left;
-  font-size: 70px;
-  color: #fff;
-  margin-left: 30px;
-  padding-top: 50px;
-  font-family: "Pinyon Script", cursive;
-  text-wrap: nowrap;
+.text.ons .effect {
+  opacity: 1;
+  transition-duration: 5s;
 }
 
-.comment span {
+.text.offs {
+  font-size: 40px;
+  margin-top: 20px;
   margin-left: 20px;
-  font-size: 20px;
-  color: blue;
-  font-family: "NotoSansJP";
+  font-family: "Pinyon Script", cursive;
+  font-style: normal;
 }
 
-.c-apper {
-  background: #3252fb;
-  flex: none;
-  height: 1px;
-  margin: 0px -60px -70px 50px;
-  width: 100%;
-  max-width: 100%;
+/*遅延の設定*/
+.delay-1 {
+  transition-delay: 0.2s;
 }
 
+.delay-2 {
+  transition-delay: 0.4s;
+}
 
-.comment p {
+.delay-3 {
+  transition-delay: 0.6s;
+}
+
+.delay-4 {
+  transition-delay: 0.8s;
+}
+
+.delay-5 {
+  transition-delay: 1s;
+}
+
+.delay-6 {
+  transition-delay: 1.2s;
+}
+
+del.c_del_3 {
+  background-image: linear-gradient(#005A5A, #005A5A);
+  background-position: 0 50%;
+  background-size: 100% 10px;
+  background-repeat: repeat-x;
+  text-decoration: none;
+  padding: 0 2px;
+}
+
+.introduction p {
   padding-top: 50px;
-  /* padding-right: 10px; */
   padding-left: 10px;
-  /* overflow: hidden; */
+}
+
+.comment-ja,
+.comment-en {
+  width: 1000px;
+  margin: 0 auto;
 }
 
 .myComment {
@@ -474,7 +401,7 @@ video {
 }
 
 .myComment.sr {
-  transform: translateX(400px);
+  transform: translateY(100px);
   opacity: 0;
 }
 
@@ -486,173 +413,102 @@ video {
 /* カルーセル */
 
 .work {
-  background-color: #ddd;
-  height: 100vh;
+  width: 100%;
+  /* margin: 0 auto; */
+  margin-top: 0;
+  padding-right: 10px;
+  transition: 1s;
+  transition-delay: .5s;
 }
 
-.Work {
-  display: flex;
-  align-items: center;
+.text-3.ons .effect {
+  opacity: 1;
+  transition-duration: 10s;
 }
 
-.mywork {
+.text.offs {
+  font-size: 40px;
+  margin-top: 0;
+  padding-top: 20px;
+  margin-left: 20px;
+  font-family: "Pinyon Script", cursive;
+  font-style: normal;
+}
+
+/*遅延の設定*/
+.delay-1 {
+  transition-delay: 0.2s;
+}
+
+.delay-2 {
+  transition-delay: 0.4s;
+}
+
+.delay-3 {
+  transition-delay: 0.6s;
+}
+
+.delay-4 {
+  transition-delay: 0.8s;
+}
+
+del.c_del_4 {
+  background-image: linear-gradient(#643250, #643250);
+  background-position: 0 50%;
+  background-size: 100% 10px;
+  background-repeat: repeat-x;
+  text-decoration: none;
+  padding: 0 2px;
+}
+
+.img-wrap {
   opacity: 0;
-  animation-name: fadeInAnime;
-  transition: opacity 2s, transform 2s;
-  animation-duration: 2s;
-  animation-delay: 1s;
-  animation-fill-mode: forwards;
 }
 
-@keyframes work {
-  0% {
-    opacity: 0;
-  }
+.img-wraps {
+  text-align: center;
+}
 
-  20% {
-    opacity: 0;
-  }
+.img-wrap img {
+  width: 600px;
+  height: 500px;
+  object-fit: cover;
+}
 
-  40% {
-    opacity: 0;
-  }
+.img-animation {
+  animation: img-opacity 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  overflow: hidden;
+  position: relative;
+}
 
-  60% {
-    opacity: .6;
-  }
+.img-animation::before {
+  animation: img-animation 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  background: #fff;
+  content: '';
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: 1;
+}
 
-  80% {
-    opacity: .8;
-  }
+.img-wrap:nth-child(2) {
+  padding-top: 20px;
+}
 
+.img-wrap:nth-child(3) {
+  padding-top: 20px;
+}
+
+@keyframes img-opacity {
   100% {
     opacity: 1;
   }
 }
 
-.mywork.sl {
-  transform: translateX(-600px);
-  opacity: 0;
-}
-
-.mywork.appear {
-  opacity: 1;
-  transform: none;
-}
-
-
-.carousel {
-  width: 80%;
-  margin: 0 auto;
-}
-
-.work h1 {
-  font-size: 80px;
-  padding-top: 50px;
-  margin-left: 50px;
-  height: 30vh;
-  color: #fff;
-  text-align: left;
-  font-family: "Pinyon Script", cursive;
-  font-weight: 600;
-  font-style: normal;
-}
-
-.work span {
-  font-size: 20px;
-  margin-left: 20px;
-  color: blue;
-  font-family: "NotoSansJP";
-}
-
-.w-apper {
-  background: #3252fb;
-  flex: none;
-  height: 1px;
-  margin: 0px 0 -10px 28px;
-  width: calc(100% - 24%);
-  max-width: calc(100% - 24%);
-}
-
-
-.container {
-  width: 100%;
-  height: 300px;
-  overflow: hidden;
-  position: relative;
-}
-
-.container ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  display: flex;
-  transition: transform .3s;
-
-}
-
-.container li {
-  height: 100%;
-  min-width: 100%;
-}
-
-.container li img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-#prev,
-#next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  border: none;
-  background: rgb(0, 0, 0, .8);
-  color: #fff;
-  font-size: 24px;
-  padding: 0 8px 4px;
-  cursor: pointer;
-}
-
-#prev:hover,
-#next:hover {
-  opacity: .8;
-}
-
-#prev {
-  left: 0;
-}
-
-#next {
-  right: 0;
-}
-
-.hidden {
-  display: none;
-}
-
-nav {
-  margin-top: 16px;
-  text-align: center;
-}
-
-nav button+button {
-  margin-left: 8px;
-}
-
-nav button {
-  border: none;
-  width: 16px;
-  height: 16px;
-  background: #ddd;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-nav .current {
-  background: #999;
+@keyframes img-animation {
+  100% {
+    transform: translateX(100%);
+  }
 }
 
 /* スキル */
@@ -668,9 +524,10 @@ nav .current {
 .myskill {
   background-color: #ddd;
   width: 100%;
-  height: 100vh;
+  height: 80vh;
+  padding-bottom: 20px;
   position: absolute;
-  top: 0;
+  top: 0px;
   left: 0%;
   display: flex;
   justify-content: center;
@@ -736,6 +593,40 @@ nav .current {
   transform: none;
 }
 
+.text.ons .effect {
+  opacity: 1;
+  transition-duration: 5s;
+}
+
+.text.offs {
+  font-size: 40px;
+  margin-top: 0;
+  margin-left: 20px;
+  font-family: "Pinyon Script", cursive;
+  font-style: normal;
+}
+
+/*遅延の設定*/
+.delay-1 {
+  transition-delay: 0.2s;
+}
+
+.delay-2 {
+  transition-delay: 0.4s;
+}
+
+.delay-3 {
+  transition-delay: 0.6s;
+}
+
+.delay-4 {
+  transition-delay: 0.8s;
+}
+
+.delay-5 {
+  transition-delay: 1s;
+}
+
 .myskill h1 {
   text-align: left;
   font-size: 60px;
@@ -767,7 +658,6 @@ nav .current {
 .name,
 .namber {
   font-style: normal;
-  font-family: "CormorantGaramond";
   font-size: 16px;
   color: rgba(0, 0, 0, 0.586);
 }
@@ -865,12 +755,101 @@ nav .current {
     overflow-x: hidden;
   }
 
+  header {
+    display: none;
+  }
+
+  .sp-menu {
+    margin-left: 0;
+    position: relative;
+    display: flex;
+    font-size: 60px;
+    z-index: 4;
+  }
+
+  .sp-menu h1 {
+    position: fixed;
+    font-family: "Pinyon Script", cursive;
+    text-decoration: none;
+    font-size: 40px;
+    color: aliceblue;
+    margin-top: 30px;
+    margin-left: 3%;
+    z-index: 99;
+  }
+
+  .material-icons#open {
+    font-size: 40px;
+    color: #fff;
+    transform: translateY(20px);
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+  }
+
+  .sp-menu #open.hide {
+    display: none;
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .6s;
+  }
+
+  .overlay h1 {
+    padding: 30px 10px;
+    font-size: 30px;
+    color: #FFFFFF;
+    font-family: "Lato", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo;
+  }
+
+  .overlay.show {
+    opacity: 1;
+    /* background-image: url(img/robert-hrovat-XTZ_OM0JmPU-unsplash.jpg);
+    background-size: cover; */
+    background-color: #646464;
+    pointer-events: auto;
+    text-align: center;
+    display: block;
+    z-index: 5;
+  }
+
+  .overlay ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .overlay.show li:nth-child(1) {
+    transition-delay: .1s;
+  }
+
+  .overlay.show li:nth-child(2) {
+    transition-delay: .2s;
+  }
+
+  .overlay.show li:nth-child(3) {
+    transition-delay: .3s;
+  }
+
+  .overlay.show li:nth-child(4) {
+    transition-delay: .4s;
+  }
+
   .overlay #close {
     position: absolute;
     top: 16px;
     right: 16px;
     font-size: 40px;
-    color: red;
+    color: #FFFFFF;
     cursor: pointer;
   }
 
@@ -878,7 +857,7 @@ nav .current {
     display: inline-block;
     text-decoration: none;
     text-align: center;
-    /* color: blue; */
+    color: #FFFFFF;
     width: 250px;
     height: 100px;
     padding-top: 40px;
@@ -902,69 +881,179 @@ nav .current {
     font-style: normal;
   }
 
-  .Name {
-    top: 400px;
+  .pagetop {
+    cursor: pointer;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 50px;
+    font-size: 28px;
+    transition: .3s;
+    color: #fff;
+    background: black;
+    z-index: 99;
+    
+  /*   デフォルトは非表示 */
+    opacity: 0;
+  }
+  .pagetop:hover {
+      box-shadow: 0 0 10px #00A6C4;
   }
 
   video {
     display: none;
   }
 
-  .sp-photo{
+  .sp-photo {
     width: 100%;
     height: 100vh;
-    -o-object-fit: cover; 
+    -o-object-fit: cover;
     object-fit: cover;
     background-image: url(img/yakei-sp-2.jpg);
     /* background-color: #ddd; */
     display: block;
   }
 
-  .p-apper {
-    background: #3252fb;
-    flex: none;
-    height: 1px;
-    margin: 0px 0px 60px 60px;
-    width: calc(100% - 41%);
-    max-width: calc(100% - 20px);
+  .p-pc {
+    display: none;
+  }
+  .p {
+    display: block;
   }
 
-  .p-title h1 {
-    height: 300px;
+  .text.offs {
+    font-size: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+    font-family: "Pinyon Script", cursive;
+    font-style: normal;
+  }
+  
+  .YN {
+    font-size: 36px;
+    margin-bottom: 16px;
+    font-family: NotoSerifJP;
+    color: #AAA;
+  }
+  
+  .NY {
+    font-size: 36px;
+    color: #AAA;
+    font-family: "Pinyon Script", cursive;
   }
 
-  .introduction {
-    flex-direction: column;
+  .myProfile {
+    opacity: 0;
+    animation-name: fadeInAnime;
+    transition: opacity 2s, transform 2s;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+  }
+  
+  @keyframes profile {
+    0% {
+      opacity: 0;
+    }
+  
+    20% {
+      opacity: 0;
+    }
+  
+    40% {
+      opacity: 0;
+    }
+  
+    60% {
+      opacity: .6;
+    }
+  
+    80% {
+      opacity: .8;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .myProfile.sl {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  
+  .myProfile.appear {
+    opacity: 1;
+    transform: none;
   }
 
-  .comment {
-    overflow-x: hidden;
+  .p img {
+    width: 100%;
+    height: 450px;
+    margin: 0;
+    object-fit: cover;
+  }
+
+  .p-1 {
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+  
+  .p-1 p {
+    margin-top: 20px;
+    font-size: 20px;
+    line-height: 35px;
+    color: #AAA;
+  }
+  
+  .p-2 {
+    text-align: right;
+    margin-top: 16px;
+    margin-right: 0;
+  }
+  
+  .p-2 a {
+    font-size: 20px;
+    text-decoration: none;
+    color: #AAA;
+  }
+
+  .introduction p {
+    padding-left: 0;
+  }
+
+  .comment-ja {
+    width: 800px;
+  }
+
+  .comment-en {
+    width: 800px;
   }
 
   .work {
-    height: 50vh;
+    height: 130vh;
   }
-
-  .w-apper {
-    background: #3252fb;
-    flex: none;
-    height: 1px;
-    margin: 0px 0 20px 28px;
-    width: calc(100% - 30%);
-    max-width: calc(100% - 24%);
-  }
-
 
   .work h1 {
     height: 200px;
   }
 
-  .container img {
-    margin: 0;
-  }
-
   .myskill {
+    background-color: #ddd;
+    width: 100%;
     height: 50vh;
+    position: absolute;
+    top: 0px;
+    left: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
   }
 }
 
@@ -980,51 +1069,102 @@ nav .current {
     text-align: center;
     width: 250px;
     height: 100px;
-    padding-top: 60px;
+    padding-top: 40px;
     padding-bottom: 10px;
   }
 
   .overlay.show li {
     opacity: 1;
     transform: none;
-    margin-top: 60px;
-    font-size: 40px;
+    margin-top: 20px;
+    font-size: 30px;
     /* font-family: "Pinyon Script", cursive; */
     font-weight: 800;
     font-style: normal;
   }
 
-  .p-apper {
-    background: #3252fb;
-    flex: none;
-    height: 1px;
-    margin: 0px 0px 60px 60px;
-    width: calc(100% - 45%);
-    max-width: calc(100% - 20px);
+  .photo img {
+    display: block;
+    background-image: url(img/yakei-sp-2.jpg);
+    object-fit: cover;
+    position: absolute;
+    top: 300px;
+    left: 25%;
+    width: 500px;
+    height: 50vh;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-right: 50px;
+    z-index: 1;
   }
 
-  .w-apper {
-    background: #3252fb;
-    flex: none;
-    height: 1px;
-    margin: 0px 0 20px 28px;
-    width: calc(100% - 33%);
-    max-width: calc(100% - 24%);
+  .myProfile {
+    opacity: 0;
+    animation-name: fadeInAnime;
+    transition: opacity 2s, transform 2s;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
   }
+  
+  @keyframes profile {
+    0% {
+      opacity: 0;
+    }
+  
+    20% {
+      opacity: 0;
+    }
+  
+    40% {
+      opacity: 0;
+    }
+  
+    60% {
+      opacity: .6;
+    }
+  
+    80% {
+      opacity: .8;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .myProfile.sl {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  
+  .myProfile.appear {
+    opacity: 1;
+    transform: none;
+  }
+
+  .p-1 {
+    margin-top: 20px;
+  }
+
+  .comment-ja {
+    width: 700px;
+  }
+
+  .comment-en {
+    width: 700px;
+  }
+
+  .work {
+    height: 130vh;
+  }
+
 }
 
 @media (max-width:850px) {
 
   body {
     overflow-x: hidden;
-  }
-
-  .Name {
-    position: absolute;
-    top: 280px;
-    text-decoration: none;
-    font-size: 60px;
-    color: aliceblue;
   }
 
   .photo-pc {
@@ -1043,34 +1183,66 @@ nav .current {
     padding-top: 5px;
     padding-bottom: 5px;
     margin-right: 50px;
-    -webkit-image: radial-gradient(rgba(255, 255, 255, 0)100%);
-    mask-image: radial-gradient(rgba(255, 255, 255, 0)100%);
-    filter: drop-shadow(0 0 10px black);
     z-index: 1;
-  }
-
-  .p-apper {
-    background: #3252fb;
-    flex: none;
-    height: 1px;
-    margin: 0px 0px -130px 60px;
-    width: calc(100% - 52%);
-    max-width: calc(100% - 20px);
   }
 
   .profile h1 {
     height: 100px;
   }
 
+  .myProfile {
+    opacity: 0;
+    animation-name: fadeInAnime;
+    transition: opacity 2s, transform 2s;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+  }
+  
+  @keyframes profile {
+    0% {
+      opacity: 0;
+    }
+  
+    20% {
+      opacity: 0;
+    }
+  
+    40% {
+      opacity: 0;
+    }
+  
+    60% {
+      opacity: .6;
+    }
+  
+    80% {
+      opacity: .8;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .myProfile.sl {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  
+  .myProfile.appear {
+    opacity: 1;
+    transform: none;
+  }
+
   .p {
     display: block;
-    text-align: center;
+    /* text-align: center; */
   }
 
   .p-1 {
     text-align: left;
     margin-top: 20px;
-    margin-left: 160px;
   }
 
   .profile img {
@@ -1085,16 +1257,6 @@ nav .current {
     flex-direction: column;
   }
 
-  .Career,
-  .comment {
-    width: 100%;
-  }
-
-  .Career li {
-    margin-top: 30px;
-    line-height: 25px;
-  }
-
   .comment h2 {
     width: 80%;
     text-align: left;
@@ -1106,19 +1268,9 @@ nav .current {
     text-wrap: nowrap;
   }
 
-  .comment span {
-    margin-left: 20px;
-    font-size: 25px;
-    font-family: "NotoSansJP";
-  }
-
-  .w-apper {
-    background: #3252fb;
-    flex: none;
-    height: 1px;
-    margin: 0px 0 20px 28px;
-    width: calc(100% - 38%);
-    max-width: calc(100% - 24%);
+  .work {
+    height: 150vh;
+    padding-right: 0;
   }
 
 }
@@ -1163,13 +1315,49 @@ nav .current {
     height: 100px;
   }
 
-  .p-apper {
-    background: #3252fb;
-    flex: none;
-    height: 1px;
-    margin: 0px 0px -130px 60px;
-    width: calc(100% - 54%);
-    max-width: calc(100% - 20px);
+  .myProfile {
+    opacity: 0;
+    animation-name: fadeInAnime;
+    transition: opacity 2s, transform 2s;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+  }
+  
+  @keyframes profile {
+    0% {
+      opacity: 0;
+    }
+  
+    20% {
+      opacity: 0;
+    }
+  
+    40% {
+      opacity: 0;
+    }
+  
+    60% {
+      opacity: .6;
+    }
+  
+    80% {
+      opacity: .8;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .myProfile.sl {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  
+  .myProfile.appear {
+    opacity: 1;
+    transform: none;
   }
 
   .p {
@@ -1180,7 +1368,6 @@ nav .current {
   .p-1 {
     text-align: left;
     margin-top: 20px;
-    margin-left: 160px;
   }
 
 
@@ -1217,19 +1404,8 @@ nav .current {
     text-wrap: nowrap;
   }
 
-  .comment span {
-    margin-left: 20px;
-    font-size: 25px;
-    font-family: "NotoSansJP";
-  }
-
-  .w-apper {
-    background: #3252fb;
-    flex: none;
-    height: 1px;
-    margin: 0px 0 20px 28px;
-    width: calc(100% - 39%);
-    max-width: calc(100% - 24%);
+  .work {
+    height: 170vh;
   }
 
   .bar-graph-wrap {
@@ -1247,7 +1423,7 @@ nav .current {
       text-decoration: none;
       text-align: center;
       width: 250px;
-      height: 60px;
+      height: 40px;
       padding-top: 20px;
       padding-bottom: 10px;
     }
@@ -1256,30 +1432,28 @@ nav .current {
     .overlay.show li {
       opacity: 1;
       transform: none;
-      margin-top: 40px;
+      margin-top: 20px;
       font-size: 30px;
       font-weight: 800;
       font-style: normal;
     }
 
-    .Name {
-      position: absolute;
-      top: 100px;
+    .overlay h1 {
+      padding: 20px 10px;
+    }
+
+    .sp-menu h1 {
+      position: fixed;
+      top: 10px;
       text-decoration: none;
-      font-size: 60px;
+      font-size: 40px;
       color: aliceblue;
     }
 
     .photo img {
       width: 300px;
-    }
-
-    /* .profile {
-      height: 100vh;
-    } */
-
-    .p-apper {
-      display: none;
+      top: 200px;
+      left: 25%;
     }
 
     .myProfile {
@@ -1290,38 +1464,38 @@ nav .current {
       animation-delay: 1s;
       animation-fill-mode: forwards;
     }
-
+    
     @keyframes profile {
       0% {
         opacity: 0;
       }
-
+    
       20% {
         opacity: 0;
       }
-
+    
       40% {
         opacity: 0;
       }
-
+    
       60% {
         opacity: .6;
       }
-
+    
       80% {
         opacity: .8;
       }
-
+    
       100% {
         opacity: 1;
       }
     }
-
+    
     .myProfile.sl {
-      transform: translateX(-400px);
+      transform: translateY(100px);
       opacity: 0;
     }
-
+    
     .myProfile.appear {
       opacity: 1;
       transform: none;
@@ -1376,7 +1550,7 @@ nav .current {
     }
 
     .myComment.sr {
-      transform: translateX(400px);
+      transform: translateY(100px);
       opacity: 0;
     }
 
@@ -1385,65 +1559,67 @@ nav .current {
       transform: none;
     }
 
-    .c-apper {
-      display: none;
+    .comment-ja {
+      width: 500px;
     }
 
-    .work {
-      height: 70vh;
+    .comment-en {
+      width: 500px;
     }
 
-    .w-apper {
-      display: none;
-    }
-
-    .mywork {
+    .img-wrap {
       opacity: 0;
-      animation-name: fadeInAnime;
-      transition: opacity 2s, transform 2s;
-      animation-duration: 2s;
-      animation-delay: 1s;
-      animation-fill-mode: forwards;
     }
-
-    @keyframes work {
-      0% {
-        opacity: 0;
-      }
-
-      20% {
-        opacity: 0;
-      }
-
-      40% {
-        opacity: 0;
-      }
-
-      60% {
-        opacity: .6;
-      }
-
-      80% {
-        opacity: .8;
-      }
-
+    
+    .img-wraps {
+      text-align: center;
+    }
+    
+    .img-wrap img {
+      width: 500px;
+      height: 450px;
+      object-fit: cover;
+    }
+    
+    .img-animation {
+      animation: img-opacity 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .img-animation::before {
+      animation: img-animation 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+      background: #fff;
+      content: '';
+      inset: 0;
+      pointer-events: none;
+      position: absolute;
+      z-index: 1;
+    }
+    
+    .img-wrap:nth-child(2) {
+      padding-top: 20px;
+    }
+    
+    .img-wrap:nth-child(3) {
+      padding-top: 20px;
+    }
+    
+    @keyframes img-opacity {
       100% {
         opacity: 1;
       }
     }
-
-    .mywork.sl {
-      transform: translateX(-400px);
-      opacity: 0;
+    
+    @keyframes img-animation {
+      100% {
+        transform: translateX(100%);
+      }
     }
+    
 
-    .mywork.appear {
-      opacity: 1;
-      transform: none;
-    }
-
-    .work h1 {
-      height: 150px;
+    .work {
+      height: 230vh;
     }
 
     .container {
@@ -1541,7 +1717,7 @@ nav .current {
       text-decoration: none;
       text-align: center;
       width: 250px;
-      height: 80px;
+      height: 60px;
       padding-top: 20px;
       padding-bottom: 10px;
     }
@@ -1550,31 +1726,29 @@ nav .current {
     .overlay.show li {
       opacity: 1;
       transform: none;
-      margin-top: 50px;
+      margin-top: 30px;
       font-size: 30px;
       font-weight: 800;
       font-style: normal;
     }
 
-    .Name {
-      position: absolute;
-      top: 200px;
-      text-decoration: none;
-      font-size: 50px;
-      color: aliceblue;
+    .pagetop {
+      font-size: 20px;
+      width: 100px;
     }
 
     .photo img {
       width: 300px;
+      left: 15%;
+    }
+
+    .text.offs {
+      margin-left: 0;
     }
 
     .p-pc {
       display: none;
     }
-
-    /* .profile {
-      height: 90vh;
-    } */
 
     .p-1 p {
       line-height: 38px;
@@ -1616,7 +1790,7 @@ nav .current {
     }
 
     .myProfile.sl {
-      transform: translateX(-200px);
+      transform: translateY(100px);
       opacity: 0;
     }
 
@@ -1631,70 +1805,18 @@ nav .current {
       margin-left: 20px;
     }
 
-    .profile span {
-      font-size: 20px;
-    }
-
     .p {
       display: block;
     }
 
-    .profile img {
-      margin-top: 10px;
-      margin-bottom: 10px;
-      margin-right: 10px;
-      margin-left: 5px;
+    .p img {
+      border-radius: 0;
     }
 
     .p-1 {
       margin-left: 20px;
-    }
-
-    .myCareer {
-      opacity: 0;
-      animation-name: fadeInAnime;
-      transition: opacity 2s, transform 2s;
-      animation-duration: 2s;
-      animation-delay: .5s;
-      animation-fill-mode: forwards;
-      overflow: hidden;
-    }
-
-    @keyframes career {
-      0% {
-        opacity: 0;
-      }
-
-      20% {
-        opacity: 0;
-      }
-
-      40% {
-        opacity: 0;
-      }
-
-      60% {
-        opacity: .6;
-      }
-
-      80% {
-        opacity: .8;
-      }
-
-      100% {
-        opacity: 1;
-      }
-    }
-
-    .myCareer.sl {
-      transform: translateX(-200px);
-      opacity: 0;
-      overflow: hidden;
-    }
-
-    .myCareer.appear {
-      opacity: 1;
-      transform: none;
+      margin-right: 20px;
+      padding-right: 0;
     }
 
     .myComment {
@@ -1734,7 +1856,7 @@ nav .current {
     }
 
     .myComment.sr {
-      transform: translateX(250px);
+      transform: translateY(100px);
       opacity: 0;
     }
 
@@ -1743,22 +1865,24 @@ nav .current {
       transform: none;
     }
 
-    .comment h2 {
-      font-size: 50px;
-      margin-left: 20px;
+    .comment-ja {
+      width: 380px;
+      line-height: 30px;
     }
 
-    .comment span {
-      font-size: 20px;
-    }
-
-    .comment p {
-      padding-left: 0;
-      line-height: 50px;
+    .comment-en {
+      width: 380px;
+      line-height: 30px;
     }
 
     .work {
-      height: 40vh;
+      height: 100vh;
+    }
+
+    .img-wrap img {
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
     }
 
     .mywork {
@@ -1806,12 +1930,6 @@ nav .current {
       transform: none;
     }
 
-    .work h1 {
-      margin-left: 20px;
-      font-size: 50px;
-      height: 100px;
-    }
-
     .container {
       height: 200px;
     }
@@ -1833,15 +1951,6 @@ nav .current {
       justify-content: center;
       align-items: center;
       overflow: hidden;
-    }
-
-    .myskill h1 {
-      font-size: 50px;
-      margin-left: 0;
-    }
-
-    .myskill span {
-      font-size: 20px;
     }
 
     .inner {
@@ -1908,28 +2017,15 @@ nav .current {
 
     .overlay a {
       padding-top: 40px;
-      height: 60px;
+      height: 40px;
     }
 
     .overlay.show li {
-      margin-top: 30px;
+      margin-top: 15px;
     }
 
-    .Name {
-      top: 200px;
-      margin-bottom: 0;
-    }
-
-    /* .profile {
-      height: 95vh;
-    } */
-
-    .profile h1 {
-      font-size: 50px;
-    }
-
-    .profile span {
-      font-size: 20px;
+    .photo img {
+      left: 13%;
     }
 
     .profile img {
@@ -1942,16 +2038,16 @@ nav .current {
       padding-right: 5px;
     }
 
-    .comment h2 {
-      font-size: 50px;
+    .comment-ja {
+      width: 350px;
     }
 
-    .comment span {
-      font-size: 20px;
+    .comment-en {
+      width: 350px;
     }
 
     .work {
-      height: 45vh;
+      height: 100vh;
     }
 
     .work h1 {
@@ -1959,20 +2055,14 @@ nav .current {
       height: 100px;
     }
 
-    .work span {
-      font-size: 20px;
-    }
-
-    .container {
+    .img-wrap img {
+      width: 300px;
       height: 200px;
+      object-fit: cover;
     }
 
-    .myskill h1 {
-      font-size: 50px;
-    }
-
-    .myskill span {
-      font-size: 20px;
+    .myskill {
+      padding-bottom: 30px;
     }
 
     .bar-graph-wrap {
@@ -1986,41 +2076,36 @@ nav .current {
       display: inline-block;
       text-decoration: none;
       text-align: center;
-      color: blue;
       width: 130px;
-      height: 60px;
-      padding-top: 30px;
+      height: 40px;
+      padding-top: 0;
     }
 
     .overlay.show li {
       opacity: 1;
       transform: none;
-      margin-top: 20px;
+      margin-top: 40px;
       font-size: 20px;
       font-weight: 1000;
       font-style: normal;
     }
 
-    .Name {
-      top: 100px;
-      font-size: 40px;
+    .overlay h1 {
+      font-size: 25px;
     }
 
     .photo img {
       width: 250px;
       top: 190px;
+      left: 18%;
     }
 
-    /* .profile {
-      height: 130vh;
-    } */
-
-    .profile h1 {
-      font-size: 50px;
+    .YN, .NY {
+      font-size: 30px;
     }
 
-    .profile span {
-      font-size: 20px;
+    .p-1 p {
+      font-size: 16px;
     }
 
     .p-2 {
@@ -2064,7 +2149,7 @@ nav .current {
     }
 
     .myComment.sr {
-      transform: translateX(200px);
+      transform: translateY(100px);
       opacity: 0;
     }
 
@@ -2073,26 +2158,59 @@ nav .current {
       transform: none;
     }
 
-    .comment h2 {
-      font-size: 50px;
+    .img-wrap {
+      opacity: 0;
     }
-
-    .comment span {
-      font-size: 20px;
+    
+    .img-wraps {
+      text-align: center;
+    }
+    
+    .img-wrap img {
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+    }
+    
+    .img-animation {
+      animation: img-opacity 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .img-animation::before {
+      animation: img-animation 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+      background: #fff;
+      content: '';
+      inset: 0;
+      pointer-events: none;
+      position: absolute;
+      z-index: 1;
+    }
+    
+    .img-wrap:nth-child(2) {
+      padding-top: 20px;
+    }
+    
+    .img-wrap:nth-child(3) {
+      padding-top: 20px;
+    }
+    
+    @keyframes img-opacity {
+      100% {
+        opacity: 1;
+      }
+    }
+    
+    @keyframes img-animation {
+      100% {
+        transform: translateX(100%);
+      }
     }
 
     .work {
-      height: 50vh;
+      height: 120vh;
       padding-bottom: 30px;
-    }
-
-    .work h1 {
-      font-size: 50px;
-      height: 100px;
-    }
-
-    .work span {
-      font-size: 20px;
     }
 
     .container {
@@ -2101,15 +2219,6 @@ nav .current {
 
     .myskill {
       height: 70vh;
-    }
-
-    .myskill h1 {
-      padding-top: 20px;
-      font-size: 50px;
-    }
-
-    .myskill span {
-      font-size: 20px;
     }
   }
 
@@ -2120,38 +2229,38 @@ nav .current {
       text-decoration: none;
       text-align: center;
       width: 130px;
-      height: 60px;
-      padding-top: 60px;
+      height: 40px;
+      padding-top: 30px;
     }
 
     .overlay.show li {
       opacity: 1;
       transform: none;
-      margin-top: 10px;
+      margin-top: 30px;
       font-size: 25px;
       font-weight: 1000;
       font-style: normal;
     }
 
-    .profile {
-      height: 95vh;
+    .photo img {
+      left: 13%;
+    }
+
+    .p img {
+      height: 300px;
+    }
+
+    .comment-ja, .comment-en {
+      width: 300px;
     }
 
     .work {
-      height: 38vh;
-    }
-
-    .carousel h1 {
-      font-size: 50px;
+      height: 100vh;
+      padding-bottom: 0;
     }
 
     .myskill {
       height: 55vh;
-    }
-
-    .myskill h1 {
-      font-size: 50px;
-      margin-bottom: 40px;
     }
 
     .bar-graph-wrap {

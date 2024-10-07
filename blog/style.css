@@ -8,48 +8,58 @@
 header {
   z-index: 2;
   width: 100%;
+  display: flex;
+  position: fixed;
 }
+
+.Name {
+  font-family: "Pinyon Script", cursive;
+  text-decoration: none;
+  font-size: 20px;
+  color: black;
+  margin-top: 20px;
+  margin-left: 3%;
+  z-index: 99;
+}
+
 
 header nav {
   display: flex;
   width: 100%;
   position: fixed;
-  top: 0;
-  line-height: 64px;
-  opacity: 0.8;
+  line-height: 100px;
   z-index: 4;
+  justify-content: flex-end;
 }
 
 header ul {
   display: flex;
-  justify-content: space-between;
   list-style: none;
   display: flex;
-  margin: 30px auto;
 }
 
 header a {
-  width: 160px;
-  border: 1px solid gold;
+  width: 80px;
   display: block;
   margin: 0 5px 0;
-  text-align: center;
-  color: gold;
-  background-color: rgba(0, 0, 0, 0.781);
-  font-size: 20px;
-  font-family: "Pinyon Script", cursive;
-  font-weight: 800;
-  font-style: normal;
+  color: black;
+  font-size: 14px;
   text-decoration: none;
-  justify-content: space-between;
 }
 
 header a:hover {
-  background: firebrick;
-  border-radius: 40%;
+  opacity: .5;
 }
 
-#g-nav {
+.sp-menu {
+  display: none;
+}
+
+.overlay {
+  display: none;
+}
+
+.pagetop {
   display: none;
 }
 
@@ -59,41 +69,13 @@ header a:hover {
 
 .top {
   width: 100%;
-  background-color: antiquewhite;
-}
-
-.top h1 {
-  text-align: center;
-  padding-top: 100px;
-  padding-bottom: 30px;
-  font-size: 80px;
-  font-family: "Pinyon Script", cursive;
-  font-weight: 600;
-  font-style: normal;
-  color: red;
-  text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
-}
-
-.fadeIn {
-  animation-name: fadeInAnime;
-  animation-duration: 5s;
-  animation-fill-mode: forwards;
-  animation-iteration-count: infinite;
-  opacity: 0;
-}
-
-@keyframes fadeInAnime {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
+  transition: 1s;
+  transition-delay: .5s;
 }
 
 .pic-2 {
   position: relative;
+  background-color: antiquewhite;
 }
 
 .pic-2 img {
@@ -106,73 +88,61 @@ header a:hover {
 .top p {
   width: 50%;
   position: absolute;
-  top: 300px;
+  top: 150px;
   left: 25%;
   text-align: center;
   line-height: 30px;
   font-size: 25px;
   font-weight: bold;
-  text-shadow: 5px 5px 10px aqua;
+  /* text-shadow: 5px 5px 10px aqua; */
+  transition: 1s;
+  transition-delay: .5s;
 }
 
-.fadeUp {
-  position: absolute;
-  top: 50%;
-  left: 30%;
-  font-size: 100px;
-  text-shadow: 5px 5px 10px pink;
-  animation-name: fadeUp;
-  animation-duration: 8s;
+.content {
+  opacity: 0;
+  animation-name: fadeInAnime;
+  transition: opacity 2s, transform 2s;
+  animation-duration: 2s;
+  animation-delay: 1s;
   animation-fill-mode: forwards;
-  animation-iteration-count: infinite;
 }
 
-@keyframes fadeUp {
+@keyframes content {
   0% {
-    transform: translateY(-10px);
-  }
-
-  10% {
-    transform: translateY(10px);
+    opacity: 0;
   }
 
   20% {
-    transform: translateY(-10px);
-  }
-
-  30% {
-    transform: translateY(10px);
+    opacity: 0;
   }
 
   40% {
-    transform: translateY(-10px);
-  }
-
-  50% {
-    transform: translateY(10px);
+    opacity: 0;
   }
 
   60% {
-    transform: translateY(-10px);
-  }
-
-  70% {
-    transform: translateY(10px);
+    opacity: .6;
   }
 
   80% {
-    transform: translateY(-10px);
-  }
-
-  90% {
-    transform: translateY(10px);
+    opacity: .8;
   }
 
   100% {
-    transform: translateY(-10px);
+    opacity: 1;
   }
 }
 
+.content.sl {
+  transform: translateY(100px);
+  opacity: 0;
+}
+
+.content.appear {
+  opacity: 1;
+  transform: none;
+}
 
 main {
   width: 100%;
@@ -261,20 +231,19 @@ main {
 
 .subblog .blog {
   height: 70%;
-  margin-top: 20px;
   border: 1px solid blue;
   background-color: #fff;
 }
 
-.img {
+.Pic {
   width: 100%;
   overflow: hidden;
   margin: 0 auto;
 }
 
-.img img {
+.Pic img {
   width: 100%;
-  height: 200px;
+  height: 300px;
   object-fit: cover;
 }
 
@@ -286,6 +255,58 @@ footer p {
   background-color: antiquewhite;
 }
 
+@media(max-width:1050px) {
+  .openbtn1 {
+    display: none;
+  }
+
+  .pic-2 img {
+    height: 1000px;
+  }
+
+  .top p {
+    width: 600px;
+    top: 400px;
+    line-height: 60px;
+  }
+
+  .pagetop {
+    cursor: pointer;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 50px;
+    font-size: 28px;
+    transition: .3s;
+    color: #fff;
+    background: black;
+    z-index: 99;
+
+    /*   デフォルトは非表示 */
+    opacity: 0;
+  }
+
+  .pagetop:hover {
+    box-shadow: 0 0 10px #00A6C4;
+  }
+
+}
+
+@media(max-width:950px) {
+  .top p {
+    left: 18%;
+  }
+}
+
+@media(max-width:850px) {
+  .top p {
+    left: 15%;
+  }
+}
 
 
 @media (max-width:800px) {
@@ -293,132 +314,131 @@ footer p {
   body {
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
   }
 
   .pc-menu {
     display: none;
   }
 
-  #g-nav {
-    display: block;
-    /*position:fixed;にし、z-indexの数値を大きくして前面へ*/
+  .sp-menu {
+    margin-left: 0;
+    position: relative;
+    display: flex;
+    font-size: 60px;
+    z-index: 4;
+  }
+
+  .sp-menu h1 {
     position: fixed;
-    z-index: 999;
-    /*ナビのスタート位置と形状*/
-    top: 0;
-    right: -120%;
-    width: 100%;
-    height: 100vh;
-    /*ナビの高さ*/
-    /* background: #999;  */
-    background-image: url(../img/itaria-2.jpg);
-    background-size: cover;
-    /*動き*/
-    transition: all 0.6s;
-  }
-
-  /*アクティブクラスがついたら位置を0に*/
-  #g-nav.panelactive {
-    right: 0;
-  }
-
-  /*ナビゲーションの縦スクロール*/
-  #g-nav.panelactive #g-nav-list {
-    /*ナビの数が増えた場合縦スクロール*/
-    position: fixed;
-    z-index: 999;
-    width: 100%;
-    height: 100vh;
-    /*表示する高さ*/
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  /*ナビゲーション*/
-  #g-nav ul {
-    /*ナビゲーション天地中央揃え*/
-    position: absolute;
-    z-index: 999;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  /*リストのレイアウト設定*/
-
-  #g-nav li {
-    list-style: none;
-    text-align: center;
-    font-size: 25px;
     font-family: "Pinyon Script", cursive;
+    text-decoration: none;
+    font-size: 40px;
+    color: black;
+    margin-top: 40px;
+    margin-left: 3%;
+    z-index: 99;
+  }
+
+  .material-icons#open {
+    font-size: 40px;
+    color: black;
+    transform: translateY(20px);
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+  }
+
+  .sp-menu #open.hide {
+    display: none;
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .6s;
+  }
+
+  .overlay h1 {
+    padding: 30px 10px;
+    font-size: 30px;
+    color: #FFFFFF;
+    font-family: "Lato", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo;
+  }
+
+  .overlay.show {
+    opacity: 1;
+    background-color: #646464;
+    pointer-events: auto;
+    text-align: center;
+    display: block;
+    z-index: 5;
+  }
+
+  .overlay ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .overlay.show li:nth-child(1) {
+    transition-delay: .1s;
+  }
+
+  .overlay.show li:nth-child(2) {
+    transition-delay: .2s;
+  }
+
+  .overlay.show li:nth-child(3) {
+    transition-delay: .3s;
+  }
+
+  .overlay.show li:nth-child(4) {
+    transition-delay: .4s;
+  }
+
+  .overlay #close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-size: 40px;
+    color: #FFFFFF;
+    cursor: pointer;
+  }
+
+  .overlay a {
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    color: #FFFFFF;
+    width: 250px;
+    height: 60px;
+    padding-top: 40px;
+    padding-bottom: 10px;
+  }
+
+  .overlay li {
+    margin-top: 60px;
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity .3s, transform .3s;
+  }
+
+  .overlay.show li {
+    opacity: 1;
+    transform: none;
+    margin-top: 60px;
+    font-size: 40px;
+    /* font-family: "Pinyon Script", cursive; */
     font-weight: 800;
     font-style: normal;
-  }
-
-  #g-nav li a {
-    color: gold;
-    text-decoration: none;
-    padding: 10px;
-    display: block;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-weight: bold;
-    z-index: 999;
-  }
-
-  /*========= ボタンのためのCSS ===============*/
-  .openbtn1 {
-    position: fixed;
-    z-index: 9999;
-    /*ボタンを最前面に*/
-    top: 40px;
-    right: 10px;
-    cursor: pointer;
-    width: 50px;
-    height: 50px;
-    font-size: 40px;
-  }
-
-  /*×に変化*/
-  .openbtn1 span {
-    display: inline-block;
-    transition: all .4s;
-    position: absolute;
-    left: 14px;
-    height: 3px;
-    border-radius: 2px;
-    background-color: red;
-    width: 45%;
-  }
-
-  .openbtn1 span:nth-of-type(1) {
-    top: 15px;
-  }
-
-  .openbtn1 span:nth-of-type(2) {
-    top: 23px;
-  }
-
-  .openbtn1 span:nth-of-type(3) {
-    top: 31px;
-  }
-
-  .openbtn1.active span:nth-of-type(1) {
-    top: 18px;
-    left: 18px;
-    transform: translateY(6px) rotate(-45deg);
-    width: 30%;
-  }
-
-  .openbtn1.active span:nth-of-type(2) {
-    opacity: 0;
-  }
-
-  .openbtn1.active span:nth-of-type(3) {
-    top: 30px;
-    left: 18px;
-    transform: translateY(-6px) rotate(45deg);
-    width: 30%;
   }
 
   .top {
@@ -426,18 +446,13 @@ footer p {
     margin: 0 auto;
   }
 
-  .top h1 {
-    padding-top: 20px;
-    font-size: 50px;
-    text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
-  }
-
-  .fadeIn {
-    animation-name: fadeInAnime;
-    animation-duration: 5s;
-    animation-fill-mode: forwards;
-    animation-iteration-count: infinite;
-    opacity: 0;
+  .top p {
+    position: absolute;
+    top: 300px;
+    left: 12%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 25px;
   }
 
   .blogs-pc {
@@ -513,16 +528,6 @@ footer p {
     }
   }
 
-  .top p {
-    position: absolute;
-    top: 250px;
-    left: 28%;
-    text-align: center;
-    line-height: 30px;
-    font-size: 20px;
-    text-shadow: 5px 5px 10px aqua;
-  }
-
   .blogs {
     justify-content: center;
   }
@@ -535,21 +540,52 @@ footer p {
 }
 
 @media (max-width:600px) {
-  .top h1 {
-    margin-left: 10px;
+
+  .overlay h1 {
+    padding: 20px 10px;
+    font-size: 25px;
+    color: #FFFFFF;
+    font-family: "Lato", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo;
+  }
+
+  .overlay a {
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    color: #FFFFFF;
+    width: 250px;
+    height: 40px;
     padding-top: 30px;
-    font-size: 50px;
-    text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+    padding-bottom: 10px;
+  }
+
+  .overlay.show li {
+    opacity: 1;
+    transform: none;
+    margin-top: 30px;
+    font-size: 30px;
+    /* font-family: "Pinyon Script", cursive; */
+    font-weight: 800;
+    font-style: normal;
+  }
+
+  .pic-2 img {
+    height: 700px;
   }
 
   .top p {
+    width: 480px;
     position: absolute;
     top: 250px;
-    left: 28%;
+    left: 8%;
     text-align: center;
     line-height: 30px;
     font-size: 20px;
-    text-shadow: 5px 5px 10px aqua;
+  }
+
+  .pagetop {
+    font-size: 20px;
+    width: 100px;
   }
 
   .blog-sp {
@@ -615,16 +651,6 @@ footer p {
     }
   }
 
-  .top p {
-    position: absolute;
-    top: 250px;
-    left: 28%;
-    text-align: center;
-    line-height: 30px;
-    font-size: 20px;
-    text-shadow: 5px 5px 10px aqua;
-  }
-
   .blogs {
     justify-content: center;
   }
@@ -633,5 +659,145 @@ footer p {
     width: 100%;
     margin-left: 10px;
     margin-right: 10px;
+  }
+}
+
+@media(max-width:500px) {
+  .overlay h1 {
+    padding: 20px 10px;
+    font-size: 25px;
+    color: #FFFFFF;
+    font-family: "Lato", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo;
+  }
+
+  .overlay a {
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    color: #FFFFFF;
+    width: 250px;
+    height: 60px;
+    padding-top: 30px;
+    padding-bottom: 10px;
+  }
+
+  .overlay.show li {
+    opacity: 1;
+    transform: none;
+    margin-top: 40px;
+    font-size: 30px;
+    font-weight: 800;
+    font-style: normal;
+  }
+
+  .pic-2 img {
+    height: 600px;
+  }
+
+  .top p {
+    width: 380px;
+    position: absolute;
+    top: 250px;
+    left: 6%;
+    text-align: center;
+    line-height: 30px;
+    font-size: 16px;
+  }
+}
+
+@media(max-width:400px) {
+
+  .top p {
+    width: 380px;
+    position: absolute;
+    top: 250px;
+    left: 2%;
+    text-align: center;
+    line-height: 30px;
+    font-size: 16px;
+  }
+}
+
+@media(max-width:380px) {
+
+  .overlay h1 {
+    padding: 20px 10px;
+    font-size: 25px;
+    color: #FFFFFF;
+    font-family: "Lato", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo;
+  }
+
+  .overlay a {
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    color: #FFFFFF;
+    width: 250px;
+    height: 40px;
+    padding-top: 30px;
+    padding-bottom: 10px;
+  }
+
+  .overlay.show li {
+    opacity: 1;
+    transform: none;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 800;
+    font-style: normal;
+  }
+
+  .top p {
+    width: 375px;
+    position: absolute;
+    top: 250px;
+    left: 0;
+    text-align: center;
+    line-height: 30px;
+    font-size: 16px;
+  }
+
+  .pagetop {
+    font-size: 16px;
+    width: 80px;
+  }
+}
+
+@media (max-width:350px) {
+  .overlay h1 {
+    padding: 20px 10px;
+    font-size: 25px;
+    color: #FFFFFF;
+    font-family: "Lato", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo;
+  }
+
+  .overlay a {
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    color: #FFFFFF;
+    width: 250px;
+    height: 60px;
+    padding-top: 30px;
+    padding-bottom: 10px;
+  }
+
+  .overlay.show li {
+    opacity: 1;
+    transform: none;
+    margin-top: 30px;
+    font-size: 25px;
+    font-weight: 800;
+    font-style: normal;
+  }
+
+  .top p {
+    width: 344px;
+    position: absolute;
+    top: 250px;
+    left: 0;
+    text-align: center;
+    line-height: 30px;
+    font-size: 14px;
   }
 }
