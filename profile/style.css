@@ -185,7 +185,7 @@ header a:hover {
   height: 90px;
   margin-left: 30px;
   font-size: 80px;
-  color:  #444B4F;
+  color: #444B4F;
   font-family: "Pinyon Script", cursive;
 }
 
@@ -482,30 +482,13 @@ header a:hover {
 
 @media(max-width:1050px) {
 
-  .overlay a {
-    display: inline-block;
-    text-decoration: none;
-    text-align: center;
-    color: blue;
-    width: 130px;
-    height: 100px;
-    padding-top: 100px;
-    padding-bottom: 10px;
-  }
-
-  .overlay.show li {
-    opacity: 1;
-    transform: none;
-    margin-top: 30px;
-    font-size: 50px;
-    font-family: "CormorantGaramond";
-    font-weight: 800;
-    font-style: normal;
-  }
-
   .about {
     margin-top: 100px;
     margin-bottom: 100px;
+  }
+
+  .about img {
+    margin-right: 200px;
   }
 
   .about p {
@@ -530,14 +513,17 @@ header a:hover {
   }
 
   .p {
-    display: flex;
+    display: block;
     margin: 100px 40px;
   }
 
-  .career {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    margin-left: 150px;
+  .p img {
+    width: 100%;
+    margin: 0;
+  }
+
+  .p-1 {
+    margin-top: 30px;
   }
 
   .ca h1 {
@@ -550,27 +536,138 @@ header a:hover {
 }
 
 @media(max-width:950px) {
-
-  .p-apper {
-    background: #3252fb;
-    flex: none;
-    height: 1px;
-    margin: 0px 0px -125px 50px;
-    width: calc(100% - 49%);
-    max-width: calc(100% - 20px);
-  }
-
-  .ca-apper {
-    background: #3252fb;
-    flex: none;
-    height: 1px;
-    margin: 0px 0px 25px 40px;
-    width: calc(100% - 42%);
-    max-width: calc(100% - 20px);
+  .about img {
+    margin-right: 150px;
   }
 }
 
 @media(max-width:850px) {
+  header {
+    display: none;
+  }
+
+  .sp-menu {
+    margin-left: 0;
+    position: relative;
+    display: flex;
+    font-size: 60px;
+    z-index: 4;
+  }
+
+  .sp-menu h1 {
+    position: fixed;
+    font-family: "Pinyon Script", cursive;
+    text-decoration: none;
+    font-size: 40px;
+    color: aliceblue;
+    margin-top: 30px;
+    margin-left: 3%;
+    z-index: 99;
+  }
+
+  .material-icons#open {
+    font-size: 40px;
+    color: #fff;
+    transform: translateY(20px);
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+  }
+
+  .sp-menu #open.hide {
+    display: none;
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .6s;
+  }
+
+  .overlay h1 {
+    padding: 30px 10px;
+    font-size: 30px;
+    color: #FFFFFF;
+    font-family: "Lato", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo;
+  }
+
+  .overlay.show {
+    opacity: 1;
+    /* background-image: url(img/robert-hrovat-XTZ_OM0JmPU-unsplash.jpg);
+    background-size: cover; */
+    background-color: #646464;
+    pointer-events: auto;
+    text-align: center;
+    display: block;
+    z-index: 5;
+  }
+
+  .overlay ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .overlay.show li:nth-child(1) {
+    transition-delay: .1s;
+  }
+
+  .overlay.show li:nth-child(2) {
+    transition-delay: .2s;
+  }
+
+  .overlay.show li:nth-child(3) {
+    transition-delay: .3s;
+  }
+
+  .overlay.show li:nth-child(4) {
+    transition-delay: .4s;
+  }
+
+  .overlay #close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-size: 40px;
+    color: #FFFFFF;
+    cursor: pointer;
+  }
+
+  .overlay a {
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    color: #FFFFFF;
+    width: 250px;
+    height: 100px;
+    padding-top: 40px;
+    padding-bottom: 10px;
+  }
+
+  .overlay li {
+    margin-top: 60px;
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity .3s, transform .3s;
+  }
+
+  .overlay.show li {
+    opacity: 1;
+    transform: none;
+    margin-top: 60px;
+    font-size: 40px;
+    /* font-family: "Pinyon Script", cursive; */
+    font-weight: 800;
+    font-style: normal;
+  }
+
   .About {
     padding-left: 10px;
     padding-right: 10px;
@@ -627,19 +724,9 @@ header a:hover {
     font-family: "Pinyon Script", cursive;
   }
 
-  .p-apper {
-    background: #3252fb;
-    flex: none;
-    height: 1px;
-    margin: 0px 0px -125px 50px;
-    width: calc(100% - 50%);
-    max-width: calc(100% - 20px);
-  }
-
-
   .p img {
-    width: 400px;
-    height: 250px;
+    width: 100%;
+    height: 350px;
     margin-left: 0;
     margin-right: 100px;
     border-radius: 8px;
@@ -661,16 +748,6 @@ header a:hover {
     font-size: 70px;
     margin-left: 30px;
   }
-
-  .ca-apper {
-    background: #3252fb;
-    flex: none;
-    height: 1px;
-    margin: 0px 0px 25px 40px;
-    width: calc(100% - 43%);
-    max-width: calc(100% - 20px);
-  }
-
 
   .timeline {
     list-style: none;
@@ -705,26 +782,36 @@ header a:hover {
 }
 
 @media (max-width:800px) {
+  .material-icons#open {
+    top: 15px;
+    right: 30px;
+  }
+
+  .overlay #close {
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    font-size: 40px;
+    color: #FFFFFF;
+    cursor: pointer;
+  }
+
+  .overlay h1 {
+    padding: 30px 10px;
+    font-size: 30px;
+    color: #FFFFFF;
+    font-family: "Lato", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo;
+  }
 
   .overlay a {
     display: inline-block;
     text-decoration: none;
     text-align: center;
-    color: blue;
-    width: 130px;
+    /* color: blue; */
+    width: 250px;
     height: 60px;
-    padding-top: 80px;
+    padding-top: 40px;
     padding-bottom: 10px;
-  }
-
-  .overlay.show li {
-    opacity: 1;
-    transform: none;
-    margin-top: 30px;
-    font-size: 50px;
-    font-family: "CormorantGaramond";
-    font-weight: 800;
-    font-style: normal;
   }
 
   .About {
@@ -758,15 +845,6 @@ header a:hover {
     margin-left: 30px;
   }
 
-  .p-apper {
-    background: #3252fb;
-    flex: none;
-    height: 1px;
-    margin: 0px 0px -105px 50px;
-    width: calc(100% - 49%);
-    max-width: calc(100% - 20px);
-  }
-
   .p {
     margin-left: 20px;
   }
@@ -782,15 +860,6 @@ header a:hover {
   .ca h1 {
     margin-left: 30px;
     font-size: 60px;
-  }
-
-  .ca-apper {
-    background: #3252fb;
-    flex: none;
-    height: 1px;
-    margin: 0px 0px 40px 40px;
-    width: calc(100% - 41%);
-    max-width: calc(100% - 20px);
   }
 
   .timeline {
@@ -814,10 +883,9 @@ header a:hover {
     display: inline-block;
     text-decoration: none;
     text-align: center;
-    color: blue;
     width: 130px;
     height: 40px;
-    padding-top: 50px;
+    padding-top: 30px;
     padding-bottom: 20px;
   }
 
@@ -825,7 +893,7 @@ header a:hover {
     opacity: 1;
     transform: none;
     margin-top: 20px;
-    font-size: 35px;
+    font-size: 30px;
     font-family: "CormorantGaramond";
     font-weight: 800;
     font-style: normal;
@@ -838,10 +906,10 @@ header a:hover {
 
   .overlay #close {
     position: absolute;
-    top: 20px;
+    top: 30px;
     right: 20px;
-    font-size: 32px;
-    color: red;
+    font-size: 40px;
+    color: #FFFFFF;
     cursor: pointer;
   }
 
@@ -872,8 +940,18 @@ header a:hover {
   }
 
   .p {
-    margin-left: 20px;
+    margin-left: 0;
     margin-right: 20px;
+  }
+
+  .p img {
+    width: 540px;
+    border-radius: 0;
+    margin: 0;
+  }
+
+  .p-1 p {
+    width: 500px;
   }
 
   .ps h1 {
@@ -888,32 +966,25 @@ header a:hover {
     font-size: 14px;
   }
 
-  .p-apper {
-    display: none;
-  }
-
-  .career {
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-  }
-
   .ca h1 {
     font-size: 60px;
+    margin-top: 20px;
     margin-left: 20px;
-    height: 70px;
+    height: 40px;
   }
 
   .timeline {
-    padding-bottom: 0;
+    padding: 0;
+    padding-bottom: 10px;
+  }
+
+  .timeline>li {
+    width: 500px;
+    margin-bottom: 0;
   }
 
   .timeline-date {
     margin-left: 16px;
-  }
-
-  .ca-apper {
-    display: none;
   }
 }
 
@@ -934,10 +1005,9 @@ header a:hover {
     display: inline-block;
     text-decoration: none;
     text-align: center;
-    color: blue;
     width: 130px;
     height: 50px;
-    padding-top: 80px;
+    padding-top: 60px;
     padding-bottom: 10px;
   }
 
@@ -953,6 +1023,7 @@ header a:hover {
 
   .About {
     width: 100%;
+    padding-bottom: 0;
   }
 
   .About h1 {
@@ -961,9 +1032,8 @@ header a:hover {
     height: 50px;
   }
 
-  .About h3 {
-    margin-left: 20px;
-    font-size: 16px;
+  .about {
+    margin-top: 30px;
   }
 
   .about img {
@@ -991,26 +1061,27 @@ header a:hover {
   }
 
   .p {
-    margin-left: 5px;
-    margin-right: 10px;
+    margin: 0;
   }
 
   .p img {
+    width: 100%;
     margin: 0;
   }
 
   .ps h1 {
     font-size: 50px;
     margin-left: 20px;
-  }
-
-  .ps span {
-    font-size: 20px;
+    margin-bottom: 40px;
   }
 
   .p-1 {
     width: 100%;
-    margin-left: 0;
+    margin-left: 16px;
+  }
+
+  .p-1 p {
+    width: 380px;
   }
 
   .Career {
@@ -1019,6 +1090,8 @@ header a:hover {
   }
 
   .ca h1 {
+    margin-top: 50px;
+    margin-bottom: 20px;
     margin-left: 20px;
     font-size: 50px;
   }
@@ -1037,26 +1110,35 @@ header a:hover {
     margin-left: 10px;
   }
 
+  .timeline>li {
+    width: 400px;
+    margin-bottom: 0;
+  }
+
   .timeline-content {
     width: 100%;
     padding-left: 10px;
   }
 
   .timeline-content p {
-    width: 95%;
+    width: 380px;
   }
 }
 
 @media(max-width:400px) {
 
+  .material-icons#open {
+    top: 15px;
+    right: 20px;
+  }
+
   .overlay a {
     display: inline-block;
     text-decoration: none;
     text-align: center;
-    color: blue;
     width: 130px;
     height: 40px;
-    padding-top: 60px;
+    padding-top: 50px;
     padding-bottom: 10px;
   }
 
@@ -1074,10 +1156,6 @@ header a:hover {
     font-size: 40px;
   }
 
-  .About h3 {
-    font-size: 16px;
-  }
-
   .about p {
     font-size: 12px;
   }
@@ -1090,22 +1168,30 @@ header a:hover {
     font-size: 40px;
   }
 
-  .ps span {
+  .p-1 {
+    height: 700px;
+    margin-left: 10px;
+  }
+
+  .p-1 p {
     font-size: 16px;
+    width: 370px;
   }
 
   .ca h1 {
+    margin-top: 0;
     font-size: 40px;
   }
 
-  .ca span {
-    font-size: 16px;
-  }
-
   .timeline-content p {
-    width: 98%;
+    width: 350px;
     padding-right: 20px;
     margin-right: 0;
+  }
+
+  .timeline>li {
+    width: 380px;
+    margin-bottom: 0;
   }
 }
 
@@ -1114,10 +1200,9 @@ header a:hover {
     display: inline-block;
     text-decoration: none;
     text-align: center;
-    color: blue;
     width: 130px;
     height: 40px;
-    padding-top: 40px;
+    padding-top: 20px;
     padding-bottom: 10px;
   }
 
@@ -1125,11 +1210,48 @@ header a:hover {
     opacity: 1;
     transform: none;
     margin-top: 30px;
-    font-size: 30px;
+    font-size: 25px;
     font-family: "CormorantGaramond";
     font-weight: 800;
     font-style: normal;
   }
+
+  .p-1 p {
+    width: 360px;
+  }
+
+  .timeline>li {
+    width: 370px;
+    margin-bottom: 0;
+  }
+
+  .timeline-content p {
+    width: 360px;
+    padding-right: 20px;
+    margin-right: 0;
+  }
+
+}
+
+@media(max-width:360px) {
+  .overlay #close {
+    right: 10px;
+  }
+  .p-1 p {
+    width: 340px;
+  }
+
+  .timeline>li {
+    width: 340px;
+    margin-bottom: 0;
+  }
+
+  .timeline-content p {
+    width: 330px;
+    padding-right: 20px;
+    margin-right: 0;
+  }
+
 }
 
 @media(max-width:350px) {
@@ -1138,10 +1260,9 @@ header a:hover {
     display: inline-block;
     text-decoration: none;
     text-align: center;
-    color: blue;
     width: 130px;
-    height: 60px;
-    padding-top: 60px;
+    height: 40px;
+    padding-top: 50px;
     padding-bottom: 10px;
   }
 
@@ -1178,4 +1299,20 @@ header a:hover {
   .timeline-content h3 {
     font-size: 16px;
   }
+
+  .p-1 p {
+    width: 320px;
+  }
+
+  .timeline>li {
+    width: 340px;
+    margin-bottom: 0;
+  }
+
+  .timeline-content p {
+    width: 330px;
+    padding-right: 20px;
+    margin-right: 0;
+  }
+
 }
