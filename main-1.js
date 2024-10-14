@@ -9,17 +9,17 @@
   // スクロール出現用関数（.offs ⇄ .ons）
   function scr_ani(scr, offs_max) {
     var window_h = $(window).height(),
-      offs_length = $(".offs").length,
+      offs_length = $(".offs-1").length,
       ons_length = $(".ons-1").length;
     if (offs_length) {
       var first_item = offs_max - offs_length;
       for (var i = 0; i < offs_length; i++) {
         var data_scr = first_item + i;
-        var offs = $('.offs[data-scr="' + data_scr + '"]');
+        var offs = $('.offs-1[data-scr="' + data_scr + '"]');
         var target = offs.offset().top;
         var trigger = target - (window_h + scr - window_h * 0.3);
         if (trigger < 0) {
-          offs.removeClass("offs").addClass("ons-1");
+          offs.removeClass("offs-1").addClass("ons-1");
         } else {
           break;
         }
@@ -33,7 +33,7 @@
         var target = ons.offset().top;
         var trigger = target - (window_h + scr);
         if (trigger > 0) {
-          ons.removeClass("ons-1").addClass("offs");
+          ons.removeClass("ons-1").addClass("offs-1");
         } else {
           break;
         }

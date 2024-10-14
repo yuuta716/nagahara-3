@@ -185,17 +185,62 @@ video {
   transform: none;
 }
 
+.text-1 {
+  opacity: 0;
+  animation-name: fadeInAnime;
+  transition: opacity 2s, transform 2s;
+  animation-duration: 2s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes text-1 {
+  0% {
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0;
+  }
+
+  40% {
+    opacity: 0;
+  }
+
+  60% {
+    opacity: .6;
+  }
+
+  80% {
+    opacity: .8;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.text-1.sl {
+  transform: translateX(-400px);
+  opacity: 0;
+}
+
+.text-1.appear {
+  opacity: 1;
+  transform: none;
+}
+
 /*アニメーション*/
 /* .text.offs .effect {
   opacity: 0;
 } */
 
-.text.ons .effect {
+/* .text.ons .effect {
   opacity: 1;
   transition-duration: 1s;
-}
+} */
 
-.text.offs {
+.text {
   font-size: 40px;
   margin-top: 20px;
   margin-left: 20px;
@@ -204,7 +249,7 @@ video {
 }
 
 /*遅延の設定*/
-.delay-1 {
+/* .delay-1 {
   transition-delay: 0.2s;
 }
 
@@ -226,7 +271,7 @@ video {
 
 .delay-6 {
   transition-delay: 1.2s;
-}
+}  */
 
 del.c_del_2 {
   background-image: linear-gradient(#AAA, #AAA);
@@ -306,12 +351,58 @@ del.c_del_2 {
   align-items: center;
 }
 
-.text.ons .effect {
-  opacity: 1;
-  transition-duration: 5s;
+.text-2 {
+  opacity: 0;
+  animation-name: fadeInAnime;
+  transition: opacity 2s, transform 2s;
+  animation-duration: 2s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+  overflow: hidden;
 }
 
-.text.offs {
+@keyframes text-2 {
+  0% {
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0;
+  }
+
+  40% {
+    opacity: 0;
+  }
+
+  60% {
+    opacity: .6;
+  }
+
+  80% {
+    opacity: .8;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.text-2.sl {
+  transform: translateX(-400px);
+  opacity: 0;
+}
+
+.text-2.appear {
+  opacity: 1;
+  transform: none;
+}
+
+/* .text.ons .effect {
+  opacity: 1;
+  transition-duration: 5s;
+} */
+
+.text {
   font-size: 40px;
   margin-top: 20px;
   margin-left: 20px;
@@ -320,29 +411,29 @@ del.c_del_2 {
 }
 
 /*遅延の設定*/
-.delay-1 {
+/* .delay-6 {
   transition-delay: 0.2s;
 }
 
-.delay-2 {
+.delay-7 {
   transition-delay: 0.4s;
 }
 
-.delay-3 {
+.delay-8 {
   transition-delay: 0.6s;
 }
 
-.delay-4 {
+.delay-9 {
   transition-delay: 0.8s;
 }
 
-.delay-5 {
+.delay-10 {
   transition-delay: 1s;
 }
 
-.delay-6 {
+.delay-11 {
   transition-delay: 1.2s;
-}
+} */
 
 del.c_del_3 {
   background-image: linear-gradient(#005A5A, #005A5A);
@@ -421,12 +512,58 @@ del.c_del_3 {
   transition-delay: .5s;
 }
 
-.text-3.ons .effect {
-  opacity: 1;
-  transition-duration: 10s;
+.text-3 {
+  opacity: 0;
+  animation-name: fadeInAnime;
+  transition: opacity 2s, transform 2s;
+  animation-duration: 2s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+  overflow: hidden;
 }
 
-.text.offs {
+@keyframes text-2 {
+  0% {
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0;
+  }
+
+  40% {
+    opacity: 0;
+  }
+
+  60% {
+    opacity: .6;
+  }
+
+  80% {
+    opacity: .8;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.text-3.sl {
+  transform: translateX(-400px);
+  opacity: 0;
+}
+
+.text-3.appear {
+  opacity: 1;
+  transform: none;
+}
+
+/* .text-3.ons .effect {
+  opacity: 1;
+  transition-duration: 10s;
+} */
+
+.text {
   font-size: 40px;
   margin-top: 0;
   padding-top: 20px;
@@ -436,7 +573,7 @@ del.c_del_3 {
 }
 
 /*遅延の設定*/
-.delay-1 {
+/* .delay-1 {
   transition-delay: 0.2s;
 }
 
@@ -450,7 +587,7 @@ del.c_del_3 {
 
 .delay-4 {
   transition-delay: 0.8s;
-}
+} */
 
 del.c_del_4 {
   background-image: linear-gradient(#643250, #643250);
@@ -543,6 +680,52 @@ del.c_del_4 {
   border-radius: 10px;
 }
 
+.text-4 {
+  opacity: 0;
+  animation-name: fadeInAnime;
+  transition: opacity 2s, transform 2s;
+  animation-duration: 2s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+  overflow: hidden;
+}
+
+@keyframes text-2 {
+  0% {
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0;
+  }
+
+  40% {
+    opacity: 0;
+  }
+
+  60% {
+    opacity: .6;
+  }
+
+  80% {
+    opacity: .8;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.text-4.sl {
+  transform: translateX(-400px);
+  opacity: 0;
+}
+
+.text-4.appear {
+  opacity: 1;
+  transform: none;
+}
+
 .animate {
   opacity: 0;
   animation-name: fadeInAnime;
@@ -593,10 +776,10 @@ del.c_del_4 {
   transform: none;
 }
 
-.text.ons .effect {
+/* .text.ons .effect {
   opacity: 1;
   transition-duration: 5s;
-}
+} */
 
 .text.offs {
   font-size: 40px;
@@ -607,7 +790,7 @@ del.c_del_4 {
 }
 
 /*遅延の設定*/
-.delay-1 {
+/* .delay-1 {
   transition-delay: 0.2s;
 }
 
@@ -625,7 +808,7 @@ del.c_del_4 {
 
 .delay-5 {
   transition-delay: 1s;
-}
+} */
 
 .myskill h1 {
   text-align: left;
@@ -772,7 +955,7 @@ del.c_del_4 {
     font-family: "Pinyon Script", cursive;
     text-decoration: none;
     font-size: 40px;
-    color: aliceblue;
+    color: #fff;
     margin-top: 30px;
     margin-left: 3%;
     z-index: 99;
@@ -790,6 +973,7 @@ del.c_del_4 {
 
   .sp-menu #open.hide {
     display: none;
+    opacity: 0;
   }
 
   .overlay {
@@ -931,7 +1115,7 @@ del.c_del_4 {
     display: block;
   }
 
-  .text.offs {
+  .text {
     font-size: 50px;
     padding-top: 50px;
     padding-bottom: 50px;
@@ -1421,6 +1605,28 @@ del.c_del_4 {
   }
 
   @media(max-width:600px) {
+
+    .sp-menu h1 {
+      position: fixed;
+      font-family: "Pinyon Script", cursive;
+      text-decoration: none;
+      font-size: 40px;
+      color: aliceblue;
+      margin-top: 20px;
+      margin-left: 3%;
+      z-index: 99;
+    }
+  
+    .material-icons#open {
+      font-size: 40px;
+      color: #fff;
+      transform: translateY(20px);
+      position: fixed;
+      top: 15px;
+      right: 25px;
+      cursor: pointer;
+    }
+
     .main {
       overflow-x: hidden;
       position: relative;
@@ -1661,6 +1867,52 @@ del.c_del_4 {
       width: 100%;
     }
 
+    .text-4 {
+      opacity: 0;
+      animation-name: fadeInAnime;
+      transition: opacity 2s, transform 2s;
+      animation-duration: 2s;
+      animation-delay: 1s;
+      animation-fill-mode: forwards;
+      overflow: hidden;
+    }
+    
+    @keyframes text-2 {
+      0% {
+        opacity: 0;
+      }
+    
+      20% {
+        opacity: 0;
+      }
+    
+      40% {
+        opacity: 0;
+      }
+    
+      60% {
+        opacity: .6;
+      }
+    
+      80% {
+        opacity: .8;
+      }
+    
+      100% {
+        opacity: 1;
+      }
+    }
+    
+    .text-4.sl {
+      transform: translateX(-300px);
+      opacity: 0;
+    }
+    
+    .text-4.appear {
+      opacity: 1;
+      transform: none;
+    }
+
     .animate {
       opacity: 0;
       animation-name: fadeInAnime;
@@ -1750,7 +2002,7 @@ del.c_del_4 {
       left: 15%;
     }
 
-    .text.offs {
+    .text{
       margin-left: 0;
     }
 
@@ -1760,6 +2012,51 @@ del.c_del_4 {
 
     .p-1 p {
       line-height: 38px;
+    }
+
+    .text-1 {
+      opacity: 0;
+      animation-name: fadeInAnime;
+      transition: opacity 2s, transform 2s;
+      animation-duration: 2s;
+      animation-delay: 1s;
+      animation-fill-mode: forwards;
+    }
+    
+    @keyframes text-1 {
+      0% {
+        opacity: 0;
+      }
+    
+      20% {
+        opacity: 0;
+      }
+    
+      40% {
+        opacity: 0;
+      }
+    
+      60% {
+        opacity: .6;
+      }
+    
+      80% {
+        opacity: .8;
+      }
+    
+      100% {
+        opacity: 1;
+      }
+    }
+    
+    .text-1.sl {
+      transform: translateX(-300px);
+      opacity: 0;
+    }
+    
+    .text-1.appear {
+      opacity: 1;
+      transform: none;
     }
 
     .myProfile {
@@ -1827,6 +2124,51 @@ del.c_del_4 {
       padding-right: 0;
     }
 
+    .text-2 {
+      opacity: 0;
+      animation-name: fadeInAnime;
+      transition: opacity 2s, transform 2s;
+      animation-duration: 2s;
+      animation-delay: 1s;
+      animation-fill-mode: forwards;
+    }
+    
+    @keyframes text-1 {
+      0% {
+        opacity: 0;
+      }
+    
+      20% {
+        opacity: 0;
+      }
+    
+      40% {
+        opacity: 0;
+      }
+    
+      60% {
+        opacity: .6;
+      }
+    
+      80% {
+        opacity: .8;
+      }
+    
+      100% {
+        opacity: 1;
+      }
+    }
+    
+    .text-2.sl {
+      transform: translateX(-300px);
+      opacity: 0;
+    }
+    
+    .text-2.appear {
+      opacity: 1;
+      transform: none;
+    }
+
     .myComment {
       opacity: 0;
       animation-name: fadeInAnime;
@@ -1883,17 +2225,7 @@ del.c_del_4 {
       line-height: 30px;
     }
 
-    /* .work {
-      height: 100vh;
-    } */
-
-    .img-wrap img {
-      width: 300px;
-      height: 200px;
-      object-fit: cover;
-    }
-
-    .mywork {
+    .text-3 {
       opacity: 0;
       animation-name: fadeInAnime;
       transition: opacity 2s, transform 2s;
@@ -1901,41 +2233,47 @@ del.c_del_4 {
       animation-delay: 1s;
       animation-fill-mode: forwards;
     }
-
-    @keyframes work {
+    
+    @keyframes text-1 {
       0% {
         opacity: 0;
       }
-
+    
       20% {
         opacity: 0;
       }
-
+    
       40% {
         opacity: 0;
       }
-
+    
       60% {
         opacity: .6;
       }
-
+    
       80% {
         opacity: .8;
       }
-
+    
       100% {
         opacity: 1;
       }
     }
-
-    .mywork.sl {
-      transform: translateX(-200px);
+    
+    .text-3.sl {
+      transform: translateX(-300px);
       opacity: 0;
     }
-
-    .mywork.appear {
+    
+    .text-3.appear {
       opacity: 1;
       transform: none;
+    }
+
+    .img-wrap img {
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
     }
 
     .container {
@@ -2046,6 +2384,51 @@ del.c_del_4 {
       padding-right: 5px;
     }
 
+    .text-2 {
+      opacity: 0;
+      animation-name: fadeInAnime;
+      transition: opacity 2s, transform 2s;
+      animation-duration: 2s;
+      animation-delay: 1s;
+      animation-fill-mode: forwards;
+    }
+    
+    @keyframes text-1 {
+      0% {
+        opacity: 0;
+      }
+    
+      20% {
+        opacity: 0;
+      }
+    
+      40% {
+        opacity: 0;
+      }
+    
+      60% {
+        opacity: .6;
+      }
+    
+      80% {
+        opacity: .8;
+      }
+    
+      100% {
+        opacity: 1;
+      }
+    }
+    
+    .text-2.sl {
+      transform: translateX(-200px);
+      opacity: 0;
+    }
+    
+    .text-2.appear {
+      opacity: 1;
+      transform: none;
+    }
+
     .comment-ja {
       width: 350px;
     }
@@ -2053,10 +2436,6 @@ del.c_del_4 {
     .comment-en {
       width: 350px;
     }
-
-    /* .work {
-      height: 100vh;
-    } */
 
     .work h1 {
       font-size: 50px;
@@ -2071,6 +2450,52 @@ del.c_del_4 {
 
     .myskill {
       padding-bottom: 30px;
+    }
+
+    .text-4 {
+      opacity: 0;
+      animation-name: fadeInAnime;
+      transition: opacity 2s, transform 2s;
+      animation-duration: 2s;
+      animation-delay: 1s;
+      animation-fill-mode: forwards;
+      overflow: hidden;
+    }
+    
+    @keyframes text-2 {
+      0% {
+        opacity: 0;
+      }
+    
+      20% {
+        opacity: 0;
+      }
+    
+      40% {
+        opacity: 0;
+      }
+    
+      60% {
+        opacity: .6;
+      }
+    
+      80% {
+        opacity: .8;
+      }
+    
+      100% {
+        opacity: 1;
+      }
+    }
+    
+    .text-4.sl {
+      transform: translateX(-200px);
+      opacity: 0;
+    }
+    
+    .text-4.appear {
+      opacity: 1;
+      transform: none;
     }
 
     .bar-graph-wrap {
