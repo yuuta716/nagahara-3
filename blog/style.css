@@ -557,7 +557,7 @@ footer p {
     color: black;
     transform: translateY(20px);
     position: fixed;
-    top: 15px;
+    top: 20px;
     right: 10px;
     cursor: pointer;
   }
