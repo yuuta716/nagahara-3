@@ -1030,7 +1030,7 @@ del.c_del_4 {
 
   .overlay #close {
     position: absolute;
-    top: 16px;
+    top: 25px;
     right: 16px;
     font-size: 40px;
     color: #FFFFFF;
@@ -1477,6 +1477,10 @@ del.c_del_4 {
     overflow-x: hidden;
   }
 
+  .material-icons#open {
+    top: 10px;
+  }
+
   .overlay a {
     display: inline-block;
     text-decoration: none;
@@ -1486,6 +1490,15 @@ del.c_del_4 {
     height: 80px;
     padding-top: 40px;
     padding-bottom: 10px;
+  }
+
+  .overlay #close {
+    position: absolute;
+    top: 30px;
+    right: 16px;
+    font-size: 40px;
+    color: #FFFFFF;
+    cursor: pointer;
   }
 
   .main {
@@ -1624,6 +1637,15 @@ del.c_del_4 {
       position: fixed;
       top: 15px;
       right: 25px;
+      cursor: pointer;
+    }
+
+    .overlay #close {
+      position: absolute;
+      top: 20px;
+      right: 16px;
+      font-size: 40px;
+      color: #FFFFFF;
       cursor: pointer;
     }
 
@@ -1831,11 +1853,6 @@ del.c_del_4 {
       }
     }
 
-    /* 
-    .work {
-      height: 230vh;
-    } */
-
     .container {
       height: 300px;
     }
@@ -1990,6 +2007,15 @@ del.c_del_4 {
       font-size: 30px;
       font-weight: 800;
       font-style: normal;
+    }
+
+    .overlay #close {
+      position: absolute;
+      top: 21px;
+      right: 16px;
+      font-size: 40px;
+      color: #FFFFFF;
+      cursor: pointer;
     }
 
     .pagetop {
@@ -2521,6 +2547,15 @@ del.c_del_4 {
       font-size: 20px;
       font-weight: 1000;
       font-style: normal;
+    }
+
+    .overlay #close {
+      position: absolute;
+      top: 15px;
+      right: 16px;
+      font-size: 40px;
+      color: #FFFFFF;
+      cursor: pointer;
     }
 
     .overlay h1 {
