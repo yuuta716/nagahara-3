@@ -590,6 +590,16 @@ footer p {
     font-style: normal;
   }
 
+  .overlay #close {
+    position: absolute;
+    top: 18px;
+    right: 16px;
+    font-size: 40px;
+    color: #FFFFFF;
+    cursor: pointer;
+  }
+
+
   .pic-2 img {
     height: 700px;
   }
@@ -711,6 +721,16 @@ footer p {
     font-style: normal;
   }
 
+  .overlay #close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-size: 40px;
+    color: #FFFFFF;
+    cursor: pointer;
+  }
+
+
   .pic-2 img {
     height: 600px;
   }
@@ -767,6 +787,16 @@ footer p {
     font-weight: 800;
     font-style: normal;
   }
+
+  .overlay #close {
+    position: absolute;
+    top: 18px;
+    right: 16px;
+    font-size: 40px;
+    color: #FFFFFF;
+    cursor: pointer;
+  }
+
 
   .top p {
     width: 375px;
