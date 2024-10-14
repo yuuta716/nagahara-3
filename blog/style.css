@@ -541,6 +541,27 @@ footer p {
 
 @media (max-width:600px) {
 
+  .sp-menu h1 {
+    position: fixed;
+    font-family: "Pinyon Script", cursive;
+    text-decoration: none;
+    font-size: 40px;
+    color: black;
+    margin-top: 35px;
+    margin-left: 3%;
+    z-index: 99;
+  }
+
+  .material-icons#open {
+    font-size: 40px;
+    color: black;
+    transform: translateY(20px);
+    position: fixed;
+    top: 15px;
+    right: 10px;
+    cursor: pointer;
+  }
+
   .overlay h1 {
     padding: 20px 10px;
     font-size: 25px;
@@ -761,6 +782,10 @@ footer p {
     font-size: 16px;
     width: 80px;
   }
+
+  footer p {
+    padding: 30px;
+  }
 }
 
 @media (max-width:350px) {
@@ -799,5 +824,9 @@ footer p {
     text-align: center;
     line-height: 30px;
     font-size: 14px;
+  }
+
+  footer p {
+    padding: 15px;
   }
 }
