@@ -26,6 +26,7 @@
     </div>
     <nav>
       <ul id="menu">
+        <li><a href="#home">Home</a></li>
         <li><a href="#profile">About</a></li>
         <li><a href="#introduction">Chance</a></li>
         <li><a href="#work">Work</a></li>
@@ -35,31 +36,49 @@
       </ul>
     </nav>
   </header>
-  <div class="sp-menu">
+  <div class="hamburger js-hamburger sp-show">
     <h1>Nagahara Yuta</h1>
     <span class="material-icons" id="open">menu</span>
   </div>
 
-  <div class="overlay">
+  <!-- ドロワーメニュー -->
+  <div class="drawer js-drawer">
     <h1>Nagahara Yuta</h1>
     <span class="material-icons" id="close">close</span>
-    <nav>
-      <ul id="menu">
-        <li><a href="#profile">About</a></li>
-        <li><a href="#introduction">Chance</a></li>
-        <li><a href="#work">Work</a></li>
-        <li><a href="#mySkill">MySkill</a></li>
-        <li><a href="blog.html">MyBlog</a></li>
-        <li><a href="https://tayori.com/form/0c10a6d20d05f5b8d06ee2f36738a6ce7ee3a1d2/">Contact</a></li>
-      </ul>
-    </nav>
+    <div class="drawer-inner">
+      <div class="drawer__nav">
+        <ul class="drawer__list">
+          <li class="drawer__item">
+            <a href="#home" class="drawer__link">Home</a>
+          </li>
+          <li class="drawer__item">
+            <a href="#profile" class="drawer__link">About</a>
+          </li>
+          <li class="drawer__item">
+            <a href="#introduction" class="drawer__link">Chance</a>
+          </li>
+          <li class="drawer__item">
+            <a href="#work" class="drawer__link">Work</a>
+          </li>
+          <li class="drawer__item">
+            <a href="#mySkill" class="drawer__link">MySkill</a>
+          </li>
+          <li class="drawer__item">
+            <a href="blog.html" class="drawer__link">MyBlog</a>
+          </li>
+          <li class="drawer__item">
+            <a href="https://tayori.com/form/0c10a6d20d05f5b8d06ee2f36738a6ce7ee3a1d2/" class="drawer__link">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 
   <div class="pagetop">Top</div>
 
   <div class="main">
 
-    <div class="photo">
+    <div class="photo" id="home">
       <video src="img/hanabi.mp4" autoplay muted loop playsinline></video>
       <div class="sp-photo" id="TOP">
         <!-- <img src="img/yakei-sp-1.jpg" width="100%"> -->
@@ -159,9 +178,9 @@
             <p class="text">
               <del class="c_del_4">
                 <span">W</span>
-                <span">o</span>
-                <span">r</span>
-                <span">k</span>
+                  <span">o</span>
+                    <span">r</span>
+                      <span">k</span>
               </del>
             </p>
           </div>
@@ -187,17 +206,17 @@
 
             <div class="text-4 sl">
               <p class="text">
-              <del class="c_del_2">
-                <span>S</span>
-                <span>k</span>
-                <span>i</span>
-                <span>l</span>
-                <span>l</span>
-              </del>
-            </p>
+                <del class="c_del_2">
+                  <span>S</span>
+                  <span>k</span>
+                  <span>i</span>
+                  <span>l</span>
+                  <span>l</span>
+                </del>
+              </p>
 
             </div>
-            
+
             <h2>フロントエンド</h2>
 
             <section class="animate sl">

@@ -12,6 +12,14 @@ body {
 
 /* ヘッダー */
 
+.drawer {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+}
+
 header {
   z-index: 2;
   width: 100%;
@@ -942,15 +950,7 @@ del.c_del_4 {
     display: none;
   }
 
-  .sp-menu {
-    margin-left: 0;
-    position: relative;
-    display: flex;
-    font-size: 60px;
-    z-index: 4;
-  }
-
-  .sp-menu h1 {
+  .hamburger h1 {
     position: fixed;
     font-family: "Pinyon Script", cursive;
     text-decoration: none;
@@ -961,6 +961,35 @@ del.c_del_4 {
     z-index: 99;
   }
 
+  HTML CSS JSResult Skip Results Iframe EDIT ON
+
+  /*=========================================
+#hamburger
+=========================================*/
+  .hamburger {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 150;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+  }
+
+  .hamburger.is-active span:nth-child(1) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(135deg);
+  }
+
+  .hamburger.is-active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.is-active span:nth-child(3) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-135deg);
+  }
+
   .material-icons#open {
     font-size: 40px;
     color: #fff;
@@ -969,66 +998,36 @@ del.c_del_4 {
     top: 15px;
     right: 20px;
     cursor: pointer;
+    z-index: 99;
   }
 
-  .sp-menu #open.hide {
-    display: none;
+  /*=========================================
+#drawer
+=========================================*/
+  .drawer {
+    visibility: hidden;
     opacity: 0;
-  }
-
-  .overlay {
     position: fixed;
     top: 0;
-    bottom: 0;
     left: 0;
-    right: 0;
-    background: rgba(255, 255, 255, 0.95);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity .6s;
+    z-index: 130;
+    width: 100%;
+    height: 100vh;
+    background-color: #646464;
+    transition: opacity .3s, visibility .3s;
   }
 
-  .overlay h1 {
-    padding: 30px 10px;
+  .drawer h1 {
+    text-align: center;
+    /* padding: 30px 10px; */
+    padding-top: 30px;
+    padding-left: 16px;
     font-size: 30px;
     color: #FFFFFF;
     font-family: "Lato", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo;
   }
 
-  .overlay.show {
-    opacity: 1;
-    /* background-image: url(img/robert-hrovat-XTZ_OM0JmPU-unsplash.jpg);
-    background-size: cover; */
-    background-color: #646464;
-    pointer-events: auto;
-    text-align: center;
-    display: block;
-    z-index: 5;
-  }
-
-  .overlay ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  .overlay.show li:nth-child(1) {
-    transition-delay: .1s;
-  }
-
-  .overlay.show li:nth-child(2) {
-    transition-delay: .2s;
-  }
-
-  .overlay.show li:nth-child(3) {
-    transition-delay: .3s;
-  }
-
-  .overlay.show li:nth-child(4) {
-    transition-delay: .4s;
-  }
-
-  .overlay #close {
+  .drawer #close {
     position: absolute;
     top: 25px;
     right: 16px;
@@ -1037,34 +1036,45 @@ del.c_del_4 {
     cursor: pointer;
   }
 
-  .overlay a {
+  .drawer.is-active {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .drawer-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 0 20px;
+  }
+
+  .drawer__list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 50px;
+  }
+
+  .drawer__link {
+    color: #ffffff;
+  }
+
+
+
+
+  /* ===============================================
+# 共通
+=============================================== */
+  .drawer__item a {
     display: inline-block;
     text-decoration: none;
     text-align: center;
     color: #FFFFFF;
     width: 250px;
     height: 100px;
-    padding-top: 40px;
-    padding-bottom: 10px;
+    font-size: 30px;
   }
-
-  .overlay li {
-    margin-top: 60px;
-    opacity: 0;
-    transform: translateY(16px);
-    transition: opacity .3s, transform .3s;
-  }
-
-  .overlay.show li {
-    opacity: 1;
-    transform: none;
-    margin-top: 60px;
-    font-size: 40px;
-    /* font-family: "Pinyon Script", cursive; */
-    font-weight: 800;
-    font-style: normal;
-  }
-
   .pagetop {
     cursor: pointer;
     position: fixed;
@@ -1253,26 +1263,6 @@ del.c_del_4 {
 
   body {
     overflow-x: hidden;
-  }
-
-  .overlay a {
-    display: inline-block;
-    text-decoration: none;
-    text-align: center;
-    width: 250px;
-    height: 100px;
-    padding-top: 40px;
-    padding-bottom: 10px;
-  }
-
-  .overlay.show li {
-    opacity: 1;
-    transform: none;
-    margin-top: 40px;
-    font-size: 30px;
-    /* font-family: "Pinyon Script", cursive; */
-    font-weight: 800;
-    font-style: normal;
   }
 
   .photo img {
@@ -1477,28 +1467,16 @@ del.c_del_4 {
     overflow-x: hidden;
   }
 
-  .material-icons#open {
-    top: 10px;
-  }
-
-  .overlay a {
+  .drawer__item a {
     display: inline-block;
     text-decoration: none;
     text-align: center;
-    /* color: blue; */
     width: 250px;
     height: 80px;
-    padding-top: 40px;
-    padding-bottom: 10px;
   }
 
-  .overlay #close {
-    position: absolute;
-    top: 30px;
-    right: 16px;
-    font-size: 40px;
-    color: #FFFFFF;
-    cursor: pointer;
+  .drawer__list {
+    gap: 40px;
   }
 
   .main {
@@ -1619,71 +1597,23 @@ del.c_del_4 {
 
   @media(max-width:600px) {
 
-    .sp-menu h1 {
-      position: fixed;
-      font-family: "Pinyon Script", cursive;
-      text-decoration: none;
-      font-size: 40px;
-      color: aliceblue;
-      margin-top: 20px;
-      margin-left: 3%;
-      z-index: 99;
-    }
-  
-    .material-icons#open {
-      font-size: 40px;
-      color: #fff;
-      transform: translateY(20px);
-      position: fixed;
-      top: 15px;
-      right: 25px;
-      cursor: pointer;
+    .drawer h1 {
+      font-size: 25px;
     }
 
-    .overlay #close {
-      position: absolute;
-      top: 20px;
-      right: 16px;
-      font-size: 40px;
-      color: #FFFFFF;
-      cursor: pointer;
+    .drawer__list {
+      gap: 10px;
+    }
+
+    .drawer__item a {
+      font-size: 20px;
+      height: 70px;
+      align-items: center;
     }
 
     .main {
       overflow-x: hidden;
       position: relative;
-    }
-
-    .overlay a {
-      display: inline-block;
-      text-decoration: none;
-      text-align: center;
-      width: 250px;
-      height: 40px;
-      padding-top: 20px;
-      padding-bottom: 10px;
-    }
-
-
-    .overlay.show li {
-      opacity: 1;
-      transform: none;
-      margin-top: 20px;
-      font-size: 30px;
-      font-weight: 800;
-      font-style: normal;
-    }
-
-    .overlay h1 {
-      padding: 20px 10px;
-    }
-
-    .sp-menu h1 {
-      position: fixed;
-      top: 10px;
-      text-decoration: none;
-      font-size: 40px;
-      color: aliceblue;
     }
 
     .photo img {
@@ -1893,38 +1823,38 @@ del.c_del_4 {
       animation-fill-mode: forwards;
       overflow: hidden;
     }
-    
+
     @keyframes text-2 {
       0% {
         opacity: 0;
       }
-    
+
       20% {
         opacity: 0;
       }
-    
+
       40% {
         opacity: 0;
       }
-    
+
       60% {
         opacity: .6;
       }
-    
+
       80% {
         opacity: .8;
       }
-    
+
       100% {
         opacity: 1;
       }
     }
-    
+
     .text-4.sl {
       transform: translateX(-300px);
       opacity: 0;
     }
-    
+
     .text-4.appear {
       opacity: 1;
       transform: none;
@@ -1989,7 +1919,7 @@ del.c_del_4 {
       position: relative;
     }
 
-    .overlay a {
+    .drawer__item a {
       display: inline-block;
       text-decoration: none;
       text-align: center;
@@ -1999,23 +1929,9 @@ del.c_del_4 {
       padding-bottom: 10px;
     }
 
-
-    .overlay.show li {
-      opacity: 1;
-      transform: none;
-      margin-top: 30px;
-      font-size: 30px;
-      font-weight: 800;
-      font-style: normal;
-    }
-
-    .overlay #close {
+    .drawer #close {
       position: absolute;
-      top: 21px;
-      right: 16px;
-      font-size: 40px;
-      color: #FFFFFF;
-      cursor: pointer;
+      top: 28px;
     }
 
     .pagetop {
@@ -2028,7 +1944,7 @@ del.c_del_4 {
       left: 15%;
     }
 
-    .text{
+    .text {
       margin-left: 0;
     }
 
@@ -2048,38 +1964,38 @@ del.c_del_4 {
       animation-delay: 1s;
       animation-fill-mode: forwards;
     }
-    
+
     @keyframes text-1 {
       0% {
         opacity: 0;
       }
-    
+
       20% {
         opacity: 0;
       }
-    
+
       40% {
         opacity: 0;
       }
-    
+
       60% {
         opacity: .6;
       }
-    
+
       80% {
         opacity: .8;
       }
-    
+
       100% {
         opacity: 1;
       }
     }
-    
+
     .text-1.sl {
       transform: translateX(-300px);
       opacity: 0;
     }
-    
+
     .text-1.appear {
       opacity: 1;
       transform: none;
@@ -2158,38 +2074,38 @@ del.c_del_4 {
       animation-delay: 1s;
       animation-fill-mode: forwards;
     }
-    
+
     @keyframes text-1 {
       0% {
         opacity: 0;
       }
-    
+
       20% {
         opacity: 0;
       }
-    
+
       40% {
         opacity: 0;
       }
-    
+
       60% {
         opacity: .6;
       }
-    
+
       80% {
         opacity: .8;
       }
-    
+
       100% {
         opacity: 1;
       }
     }
-    
+
     .text-2.sl {
       transform: translateX(-300px);
       opacity: 0;
     }
-    
+
     .text-2.appear {
       opacity: 1;
       transform: none;
@@ -2259,38 +2175,38 @@ del.c_del_4 {
       animation-delay: 1s;
       animation-fill-mode: forwards;
     }
-    
+
     @keyframes text-1 {
       0% {
         opacity: 0;
       }
-    
+
       20% {
         opacity: 0;
       }
-    
+
       40% {
         opacity: 0;
       }
-    
+
       60% {
         opacity: .6;
       }
-    
+
       80% {
         opacity: .8;
       }
-    
+
       100% {
         opacity: 1;
       }
     }
-    
+
     .text-3.sl {
       transform: translateX(-300px);
       opacity: 0;
     }
-    
+
     .text-3.appear {
       opacity: 1;
       transform: none;
@@ -2387,13 +2303,8 @@ del.c_del_4 {
 
   @media(max-width:400px) {
 
-    .overlay a {
-      padding-top: 40px;
+    .drawer__item a {
       height: 40px;
-    }
-
-    .overlay.show li {
-      margin-top: 15px;
     }
 
     .photo img {
@@ -2418,38 +2329,38 @@ del.c_del_4 {
       animation-delay: 1s;
       animation-fill-mode: forwards;
     }
-    
+
     @keyframes text-1 {
       0% {
         opacity: 0;
       }
-    
+
       20% {
         opacity: 0;
       }
-    
+
       40% {
         opacity: 0;
       }
-    
+
       60% {
         opacity: .6;
       }
-    
+
       80% {
         opacity: .8;
       }
-    
+
       100% {
         opacity: 1;
       }
     }
-    
+
     .text-2.sl {
       transform: translateX(-200px);
       opacity: 0;
     }
-    
+
     .text-2.appear {
       opacity: 1;
       transform: none;
@@ -2487,38 +2398,38 @@ del.c_del_4 {
       animation-fill-mode: forwards;
       overflow: hidden;
     }
-    
+
     @keyframes text-2 {
       0% {
         opacity: 0;
       }
-    
+
       20% {
         opacity: 0;
       }
-    
+
       40% {
         opacity: 0;
       }
-    
+
       60% {
         opacity: .6;
       }
-    
+
       80% {
         opacity: .8;
       }
-    
+
       100% {
         opacity: 1;
       }
     }
-    
+
     .text-4.sl {
       transform: translateX(-200px);
       opacity: 0;
     }
-    
+
     .text-4.appear {
       opacity: 1;
       transform: none;
@@ -2531,35 +2442,13 @@ del.c_del_4 {
 
   @media(max-width:380px) {
 
-    .overlay a {
+    .drawer__item a {
       display: inline-block;
       text-decoration: none;
       text-align: center;
       width: 130px;
-      height: 40px;
+      height: 50px;
       padding-top: 0;
-    }
-
-    .overlay.show li {
-      opacity: 1;
-      transform: none;
-      margin-top: 40px;
-      font-size: 20px;
-      font-weight: 1000;
-      font-style: normal;
-    }
-
-    .overlay #close {
-      position: absolute;
-      top: 18px;
-      right: 16px;
-      font-size: 40px;
-      color: #FFFFFF;
-      cursor: pointer;
-    }
-
-    .overlay h1 {
-      font-size: 25px;
     }
 
     .photo img {
@@ -2693,7 +2582,98 @@ del.c_del_4 {
 
   @media(max-width:350px) {
 
-    .overlay a {
+    .text-1 {
+      opacity: 0;
+      animation-name: fadeInAnime;
+      transition: opacity 2s, transform 2s;
+      animation-duration: 2s;
+      animation-delay: 1s;
+      animation-fill-mode: forwards;
+    }
+    
+    @keyframes text-1 {
+      0% {
+        opacity: 0;
+      }
+    
+      20% {
+        opacity: 0;
+      }
+    
+      40% {
+        opacity: 0;
+      }
+    
+      60% {
+        opacity: .6;
+      }
+    
+      80% {
+        opacity: .8;
+      }
+    
+      100% {
+        opacity: 1;
+      }
+    }
+    
+    .text-1.sl {
+      transform: translateX(-200px);
+      opacity: 0;
+    }
+    
+    .text-1.appear {
+      opacity: 1;
+      transform: none;
+    }
+
+    .text-3 {
+      opacity: 0;
+      animation-name: fadeInAnime;
+      transition: opacity 2s, transform 2s;
+      animation-duration: 2s;
+      animation-delay: 1s;
+      animation-fill-mode: forwards;
+      overflow: hidden;
+    }
+    
+    @keyframes text-2 {
+      0% {
+        opacity: 0;
+      }
+    
+      20% {
+        opacity: 0;
+      }
+    
+      40% {
+        opacity: 0;
+      }
+    
+      60% {
+        opacity: .6;
+      }
+    
+      80% {
+        opacity: .8;
+      }
+    
+      100% {
+        opacity: 1;
+      }
+    }
+    
+    .text-3.sl {
+      transform: translateX(-200px);
+      opacity: 0;
+    }
+    
+    .text-3.appear {
+      opacity: 1;
+      transform: none;
+    }
+
+    .drawer__item a {
       display: inline-block;
       text-decoration: none;
       text-align: center;
@@ -2702,13 +2682,8 @@ del.c_del_4 {
       padding-top: 30px;
     }
 
-    .overlay.show li {
-      opacity: 1;
-      transform: none;
-      margin-top: 30px;
-      font-size: 25px;
-      font-weight: 1000;
-      font-style: normal;
+    .drawer #close {
+      right: 5px;
     }
 
     .photo img {

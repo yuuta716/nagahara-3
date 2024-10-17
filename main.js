@@ -1,4 +1,26 @@
 "use strict";
+{
+  const hamburger = document.querySelector(".js-hamburger");
+  const drawer = document.querySelector(".js-drawer");
+  const drawerLinks = document.querySelectorAll(".js-drawer a");
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('is-active');
+    drawer.classList.toggle('is-active');
+  });
+
+  drawerLinks.forEach(drawerLink => {
+    drawerLink.addEventListener('click', () => {
+      hamburger.classList.remove('is-active');
+      drawer.classList.remove('is-active');
+    });
+  });
+
+  drawer.addEventListener('click', () => {
+    hamburger.classList.remove('is-active');
+    drawer.classList.remove('is-active');
+  });
+}
 
 {
   function callback(entries, obs) {
@@ -198,27 +220,32 @@
   });
 }
 
-{
-  const open = document.getElementById('open');
-  const overlay = document.querySelector('.overlay');
-  const menu = document.getElementById('menu');
-  const close = document.getElementById('close');
+// {
+//   const ham = document.getElementById('open');
+//   const overlay = document.querySelector('.overlay');
+//   const nav  = document.getElementById('js-nav');
+//   const close = document.getElementById('close');
 
-  open.addEventListener('click', () => {
-    overlay.classList.add('show');
-    open.classList.add('hide');
-  });
+//   open.addEventListener('click', () => {
+//     overlay.classList.add('show');
+//     open.classList.add('hide');
+//   });
 
-  close.addEventListener('click', () => {
-    overlay.classList.remove('show');
-    open.classList.remove('hide');
-  });
+//   close.addEventListener('click', () => {
+//     overlay.classList.remove('show');
+//     open.classList.remove('hide');
+//   });
 
-  menu.addEventListener('click', () => {
-    overlay.classList.add('show');
-    open.classList.add('hide');
-  });
-}
+//   menu.addEventListener('click', () => {
+//     overlay.classList.add('show');
+//     open.classList.add('hide');
+//   });
+
+//   ham.addEventListener('click', function () { //ハンバーガーメニューをクリックしたら
+//     ham.classList.toggle('active'); // ハンバーガーメニューにactiveクラスを付け外し
+//     nav.classList.toggle('active'); // ナビゲーションメニューにactiveクラスを付け外し
+//   });
+// }
 
 {
   function callback(entries, obs) {
