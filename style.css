@@ -950,6 +950,14 @@ del.c_del_4 {
     display: none;
   }
 
+  .drawer {
+    display: block;
+  }
+  
+  .hamburger {
+    display: block;
+  }
+
   .hamburger h1 {
     position: fixed;
     font-family: "Pinyon Script", cursive;
