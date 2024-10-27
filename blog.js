@@ -41,7 +41,7 @@
     const options = {
       threshold: 0.2,
     };
-  
+
     const observer = new
       IntersectionObserver(callback, options);//場所
     const targets = document.querySelectorAll(".content");//監視されるもの
@@ -49,7 +49,7 @@
       observer.observe(target);//obseverにtargetが入るときの.observe監視対象にする
     });
   }
-  
+
 }
 
 {

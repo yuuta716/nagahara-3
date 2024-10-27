@@ -131,8 +131,8 @@
 {
   document.addEventListener("DOMContentLoaded", function () {
     const content4 = document.querySelector(".content4");
-    const scrollThresholdStart = 0; // 変化が始まるスクロールの閾値
-    const scrollThresholdEnd = 0; // 変化が終わるスクロールの閾値
+    const scrollThresholdStart = 100; // 変化が始まるスクロールの閾値
+    const scrollThresholdEnd = 100; // 変化が終わるスクロールの閾値
 
     window.addEventListener("scroll", function () {
       const scrollPosition = window.scrollY;
@@ -154,8 +154,8 @@
 {
   document.addEventListener("DOMContentLoaded", function () {
     const content3 = document.querySelector(".content3");
-    const scrollThresholdStart = 100; // 変化が始まるスクロールの閾値
-    const scrollThresholdEnd = 100; // 変化が終わるスクロールの閾値
+    const scrollThresholdStart = 0; // 変化が始まるスクロールの閾値
+    const scrollThresholdEnd = 1000; // 変化が終わるスクロールの閾値
 
     window.addEventListener("scroll", function () {
       const scrollPosition = window.scrollY;
